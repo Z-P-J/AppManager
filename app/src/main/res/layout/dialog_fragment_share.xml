@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <com.zpj.appmanager.ui.widget.DialogHeaderLayout
+        android:id="@+id/layout_dialog_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:dialog_header_title="分享内容至"
+        />
+
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:orientation="horizontal"
+        app:columnCount="4"
+        app:rowCount="2"
+        >
+
+        <TextView
+            style="@style/me_tool_card_item_style"
+            android:id="@+id/tv_qq"
+            android:drawableTop="@drawable/ic_logo_qq"
+            android:text="QQ"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            style="@style/me_tool_card_item_style"
+            android:id="@+id/tv_wechat"
+            android:drawableTop="@drawable/ic_logo_wechat"
+            android:text="微信"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            style="@style/me_tool_card_item_style"
+            android:id="@+id/tv_moments"
+            android:drawableTop="@drawable/ic_logo_moments"
+            android:text="朋友圈"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            style="@style/me_tool_card_item_style"
+            android:id="@+id/tv_weibo"
+            android:drawableTop="@drawable/ic_logo_weibo"
+            android:text="微博"
+            android:textSize="12sp"
+            />
+
+        <com.zpj.appmanager.ui.widget.DrawableTintTextView
+            style="@style/me_tool_card_item_style"
+            android:id="@+id/tv_copy"
+            android:drawableTop="@drawable/ic_logo_link"
+            android:text="复制内容"
+            android:textSize="12sp"
+            />
+
+        <com.zpj.appmanager.ui.widget.DrawableTintTextView
+            style="@style/me_tool_card_item_style"
+            android:id="@+id/tv_more"
+            android:drawableTop="@drawable/ic_logo_more"
+            android:text="更多"
+            android:textSize="12sp"
+            />
+
+    </android.support.v7.widget.GridLayout>
+
+</LinearLayout>

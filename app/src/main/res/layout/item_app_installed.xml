@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/selectableItemBackground"
+    android:padding="16dp">
+
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:id="@+id/iv_icon"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        />
+
+    <LinearLayout
+        android:layout_toEndOf="@+id/iv_icon"
+        android:layout_toStartOf="@+id/layout_right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:textColor="?attr/textColorMajor"
+            android:textSize="16sp"
+            android:text="手机乐园S"
+            android:layout_marginBottom="@dimen/dp_8"
+            />
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_info"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:singleLine="true"-->
+<!--            android:textColor="?attr/textColorNormal"-->
+<!--            android:textSize="12sp"-->
+<!--            android:text="v1.2.0 | 2015-02-06" />-->
+
+        <com.nex3z.flowlayout.FlowLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:flRowSpacing="@dimen/dp_4"
+            app:flChildSpacing="@dimen/dp_4"
+            >
+
+            <TextView
+                android:id="@+id/tv_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="?attr/textColorNormal"
+                android:textSize="12sp"
+                android:text="v1.2.0 | 2015-02-06"
+                android:visibility="gone"
+                />
+
+            <com.zpj.appmanager.ui.widget.RoundedDrawableTextView
+                android:id="@+id/tv_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:text="已收录"
+                android:paddingHorizontal="6dp"
+                app:tag_background_tint_color="@color/colorPrimary"
+                />
+
+            <com.zpj.appmanager.ui.widget.RoundedDrawableTextView
+                android:id="@+id/tv_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="?attr/backgroundColor"
+                android:textSize="12sp"
+                android:text="6.92 MB"
+                android:paddingHorizontal="6dp"
+                app:tag_background_tint_color="?attr/textColorMajor"
+                />
+
+            <com.zpj.appmanager.ui.widget.RoundedDrawableTextView
+                android:id="@+id/tv_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:text="1.0.0"
+                android:paddingHorizontal="6dp"
+                app:tag_background_tint_color="@color/light_blue1"
+                />
+
+
+        </com.nex3z.flowlayout.FlowLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/layout_right"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        >
+
+        <ImageView
+            android:id="@+id/iv_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_more"
+            android:tint="?attr/textColorNormal"
+            android:layout_gravity="center"
+            />
+
+        <com.zpj.widget.checkbox.SmoothCheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            app:color_checked="@color/colorPrimary"
+            android:clickable="false"
+            android:visibility="gone"
+            />
+
+    </FrameLayout>
+
+
+</RelativeLayout>

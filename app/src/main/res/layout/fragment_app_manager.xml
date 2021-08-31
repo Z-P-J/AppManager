@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+    >
+
+    <com.zpj.widget.toolbar.ZToolBar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:z_toolbar_fillStatusBar="true"
+        app:z_toolbar_titleBarColor="@color/colorPrimary"
+        app:z_toolbar_statusBarColor="@color/colorPrimary"
+        app:z_toolbar_showBottomLine="false"
+        app:z_toolbar_statusBarMode="light"
+        app:z_toolbar_centerType="textView"
+        app:z_toolbar_centerText="应用管理"
+        app:z_toolbar_centerTextColor="#ffffff"
+        app:z_toolbar_rightType="imageButton"
+        app:z_toolbar_rightImageResource="@drawable/ic_search"
+        />
+
+    <net.lucode.hackware.magicindicator.MagicIndicator
+        android:id="@+id/magic_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        android:padding="8dp"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="GradientButton">
+        <attr name="button_text" format="string" />
+        <attr name="button_size" format="dimension" />
+        <attr name="button_text_color" format="color" />
+        <attr name="button_start_color" format="color" />
+        <attr name="button_end_color" format="color" />
+        <attr name="button_press_start_color" format="color" />
+        <attr name="button_press_end_color" format="color" />
+        <attr name="button_gradient_orientation" format="enum">
+            <enum name="TOP_BOTTOM" value="0" />
+            <enum name="TR_BL" value="1" />
+            <enum name="RIGHT_LEFT" value="2" />
+            <enum name="BR_TL" value="3" />
+            <enum name="BOTTOM_TOP" value="4" />
+            <enum name="BL_TR" value="5" />
+            <enum name="LEFT_RIGHT" value="6" />
+            <enum name="TL_BR" value="7" />
+        </attr>
+        <attr name="button_radius" format="dimension" />
+        <attr name="button_shadow_distance" format="dimension" />
+        <attr name="button_shadow_angle" format="integer" />
+        <attr name="button_shadow_color" format="color" />
+        <attr name="button_is_shadowed" format="boolean" />
+        <attr name="button_shadow_radius" format="dimension" />
+        <attr name="button_padding" format="dimension" />
+        <attr name="button_padding_start" format="dimension" />
+        <attr name="button_padding_top" format="dimension" />
+        <attr name="button_padding_end" format="dimension" />
+        <attr name="button_padding_bottom" format="dimension" />
+    </declare-styleable>
+
+<!--    <declare-styleable name="RoundProgressBar">-->
+<!--        <attr name="round_color" format="color" />-->
+<!--        <attr name="round_progressColor" format="color" />-->
+<!--        <attr name="round_width" format="dimension" />-->
+<!--        <attr name="round_textColor" format="color" />-->
+<!--        <attr name="round_textsize" format="dimension" />-->
+<!--        <attr name="round_max" format="integer" />-->
+<!--    </declare-styleable>-->
+
+    <declare-styleable name="ClipViewLayout">
+        <attr name="clipType" format="enum">
+            <enum name="circle" value="1" />
+            <enum name="rectangle" value="2" />
+        </attr>
+        <attr name="mHorizontalPadding" format="dimension" />
+        <attr name="clipBorderWidth" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+
+
+    <declare-styleable name="SmileView">
+        <attr name="smil_radius" format="integer" />
+        <attr name="smil_line_width" format="integer" />
+        <attr name="smil_duration" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="PullZoomView">
+        <attr name="pzv_sensitive" format="float" />
+        <attr name="pzv_isZoomEnable" format="boolean" />
+        <attr name="pzv_isParallax" format="boolean" />
+        <attr name="pzv_zoomTime" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="FillImageView">
+        <attr name="checkImage" format="reference" />
+        <attr name="unCheckImage" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="DrawableTintTextView">
+        <attr name="drawable_tint_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="TitleHeaderLayout">
+        <attr name="title_header_title" format="string" />
+        <attr name="title_header_show_more" format="boolean" />
+    </declare-styleable>
+
+    <!--    <declare-styleable name="RecommendHeader">-->
+    <!--        <attr name="header_title" format="string" />-->
+    <!--    </declare-styleable>-->
+
+    <declare-styleable name="RecommendCard">
+        <attr name="header_title" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="PercentImageView">
+        <attr name="piv_basics" format="enum">
+            <enum name="width" value="0" />
+            <enum name="height" value="1" />
+        </attr>
+        <attr name="piv_percent" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="SubmitView">
+        <attr name="sv_bindEditText1" format="reference" />
+        <attr name="sv_bindEditText2" format="reference" />
+        <attr name="sv_bindEditText3" format="reference" />
+        <attr name="sv_bindEditText4" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ParticleView">
+        <attr name="pv_count" format="integer" />
+        <attr name="pv_alpha" format="integer" />
+        <attr name="pv_min_size" format="integer" />
+        <attr name="pv_max_size" format="integer" />
+        <attr name="pv_color" format="color" />
+        <attr name="pv_background" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="EmojiTextView">
+        <attr name="z_emojiSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="RankHeaderLayout">
+        <attr name="rank_num" format="enum">
+            <enum name="rank1" value="1" />
+            <enum name="rank2" value="2" />
+            <enum name="rank3" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="NineGridView">
+        <attr name="bigPictureMaxHeight" format="dimension" />
+        <attr name="bigPictureMinHeight" format="dimension" />
+        <attr name="pictureSpace" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="LetterSortSideBar">
+        <attr format="color|reference" name="sidebarSelectTextColor"/>
+        <attr format="color|reference" name="sidebarUnSelectTextColor"/>
+        <attr format="dimension" name="sidebarSelectTextSize"/>
+        <attr format="dimension" name="sidebarUnSelectTextSize"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundedDrawableTextView">
+        <attr format="color" name="tag_background_tint_color"/>
+    </declare-styleable>
+
+    <declare-styleable name="InfoCardView">
+        <attr format="string" name="info_card_title"/>
+        <attr format="string" name="info_card_content"/>
+        <attr format="integer" name="info_card_content_max_lines"/>
+        <attr format="reference" name="info_card_right_icon"/>
+        <attr format="boolean" name="info_card_show_right_icon"/>
+    </declare-styleable>
+
+    <declare-styleable name="MenuActionButton">
+        <attr format="string" name="menu_action_title"/>
+        <attr format="reference" name="menu_action_icon"/>
+        <attr format="color" name="menu_action_color"/>
+    </declare-styleable>
+
+    <declare-styleable name="IconCountView">
+        <attr name="count" format="integer"/>
+        <attr name="checked" format="boolean"/>
+        <attr name="normalRes" format="reference"/>
+        <attr name="selectedRes" format="reference"/>
+        <attr name="zeroText" format="string"/>
+        <attr name="textNormalColor" format="color"/>
+        <attr name="textSelectedColor" format="color"/>
+        <attr name="textSize" format="dimension"/>
+        <!--        <attr name="keepCount" format="boolean"/>-->
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableTextView">
+        <!--保留的行数-->
+        <attr name="ep_max_line" format="integer" />
+        <!--是否需要展开-->
+        <attr name="ep_need_expand" format="boolean" />
+        <!--是否需要收起 这个是建立在开启展开的基础上的-->
+        <attr name="ep_need_contract" format="boolean" />
+        <!--是否需要@用户 -->
+        <attr name="ep_need_mention" format="boolean" />
+        <!--是否需要对链接进行处理 -->
+        <attr name="ep_need_link" format="boolean" />
+        <!--是否需要动画-->
+        <attr name="ep_need_animation" format="boolean" />
+        <!--是否需要永远将展开或者收回放置在最后边-->
+        <attr name="ep_need_always_showright" format="boolean" />
+        <!--是否需要将连接转换成网页链接显示 默认为true-->
+        <attr name="ep_need_convert_url" format="boolean" />
+        <!--是否需要自定义规则-->
+        <attr name="ep_need_self" format="boolean" />
+        <!--收起的文案-->
+        <attr name="ep_contract_text" format="string" />
+        <!--展开的文案-->
+        <attr name="ep_expand_text" format="string" />
+        <!--展开的文字的颜色-->
+        <attr name="ep_expand_color" format="color" />
+        <!--收起的文字的颜色-->
+        <attr name="ep_contract_color" format="color" />
+        <!--在收回和展开前面添加的内容的字体颜色-->
+        <attr name="ep_end_color" format="color" />
+        <!--链接的文字的颜色-->
+        <attr name="ep_link_color" format="color" />
+        <!--@用户的文字的颜色-->
+        <attr name="ep_mention_color" format="color" />
+        <!--自定义规则的文字的颜色-->
+        <attr name="ep_self_color" format="color" />
+        <!--链接的图标-->
+        <attr name="ep_link_res" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ExpandIcon">
+        <attr format="boolean" name="eiv_roundedCorners"/>
+        <attr format="boolean" name="eiv_switchColor"/>
+        <attr format="color" name="eiv_color"/>
+        <attr format="color" name="eiv_colorMore"/>
+        <attr format="color" name="eiv_colorLess"/>
+        <attr format="color" name="eiv_colorIntermediate"/>
+        <attr format="integer" name="eiv_animationDuration"/>
+        <attr format="dimension" name="eiv_padding"/>
+    </declare-styleable>
+
+    <declare-styleable name="DialogHeaderLayout">
+        <attr name="dialog_header_title" format="string" />
+    </declare-styleable>
+
+    <string-array name="app_actions">
+        <item>@string/text_detail_info</item>
+        <item>@string/text_share</item>
+        <item>@string/text_uninstall</item>
+        <item>@string/text_open</item>
+    </string-array>
+
+    <string-array name="apk_actions">
+        <item>@string/text_detail_info</item>
+        <item>@string/text_share</item>
+        <item>@string/text_delete</item>
+        <item>@string/text_install</item>
+    </string-array>
+
+    <attr name="backgroundColor" format="color" />
+    <attr name="backgroundColorAccent" format="color" />
+    <attr name="backgroundTintColor" format="color" />
+    <attr name="backgroundColorCard" format="color" />
+    <attr name="textColorMajor" format="color" />
+    <attr name="textColorNormal" format="color" />
+    <attr name="textColorMinor" format="color" />
+
+    <attr name="backgroundShape" format="reference|color" />
+    <attr name="backgroundBanner" format="reference|color" />
+    <attr name="backgroundPickedGame" format="reference|color" />
+    <attr name="backgroundProgress" format="reference|color" />
+
+</resources>

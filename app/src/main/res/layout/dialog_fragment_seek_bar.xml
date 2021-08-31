@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/toolbar_title"
+            android:textColor="?attr/textColorMajor"
+            android:textSize="16sp"
+            />
+
+        <ImageButton
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:background="?attr/actionBarItemBackground"
+            android:layout_gravity="end"
+            />
+
+    </FrameLayout>
+
+    <com.warkiz.widget.IndicatorStayLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        >
+
+        <com.warkiz.widget.IndicatorSeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:isb_max="5"
+            app:isb_min="1"
+            app:isb_progress="3"
+            app:isb_ticks_count="5"
+            app:isb_seek_smoothly="false"
+            app:isb_show_tick_texts="true"
+            app:isb_tick_texts_color="?attr/textColorMajor"
+            app:isb_track_progress_color="@color/colorPrimary"
+            app:isb_track_background_color="@color/switcher_normal_color"
+            app:isb_thumb_color="@color/colorPrimary"
+            app:isb_thumb_text_color="@color/colorPrimary"
+            app:isb_show_indicator="circular_bubble"
+            app:isb_indicator_color="@color/colorPrimary"
+            />
+
+    </com.warkiz.widget.IndicatorStayLayout>
+
+</LinearLayout>

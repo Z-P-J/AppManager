@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/share"
+        android:icon="@drawable/ic_share"
+        android:title="分享">
+
+    </item>
+
+    <item
+        android:id="@+id/collect"
+        android:icon="@drawable/ic_app_collection_white_24dp"
+        android:title="收藏">
+    </item>
+
+    <item
+        android:id="@+id/delete_collect"
+        android:icon="@drawable/ic_app_collection_white_24dp"
+        android:title="取消收藏">
+    </item>
+
+    <item
+        android:id="@+id/delete"
+        android:icon="@drawable/ic_clear_black_24dp"
+        android:title="删除"
+        />
+
+    <item
+        android:id="@+id/private_theme"
+        android:icon="@drawable/ic_move_to_inbox_black_24dp"
+        android:title="私有">
+    </item>
+
+    <item
+        android:id="@+id/public_theme"
+        android:icon="@drawable/ic_move_to_inbox_black_24dp"
+        android:title="公开">
+    </item>
+
+</menu>

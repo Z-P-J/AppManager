@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+    >
+
+    <include layout="@layout/layout_toolbar" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.zpj.appmanager.ui.widget.ElasticScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            >
+
+            <LinearLayout
+                android:id="@+id/ll_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@mipmap/ic_launcher_round"
+                    android:layout_marginTop="16dp"
+                    />
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:text="手机乐园"-->
+<!--                    android:textColor="?attr/textColorMajor"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:padding="8dp"-->
+<!--                    />-->
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/app_name"
+                    android:tint="?attr/textColorMajor"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_app_introduce"
+                    android:tint="@color/colorPrimary"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:layout_marginBottom="56dp"
+                    />
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:text="发现应用的乐趣"-->
+<!--                    android:textColor="@color/colorPrimary"-->
+<!--                    android:textSize="14sp"-->
+<!--                    android:layout_marginBottom="16dp"-->
+<!--                    />-->
+
+                <com.zpj.widget.setting.CommonSettingItem
+                    style="@style/simple_setting_item_style"
+                    android:id="@+id/item_about_me"
+                    app:z_setting_titleText="关于开发者"
+                    app:z_setting_rightText="Z-P-J"
+                    />
+
+                <com.zpj.widget.setting.CommonSettingItem
+                    style="@style/simple_setting_item_style"
+                    android:id="@+id/item_open_source"
+                    app:z_setting_titleText="开源地址"
+                    app:z_setting_rightText="https://github.com/Z-P-J/sjly"
+                    />
+
+                <com.zpj.widget.setting.CommonSettingItem
+                    style="@style/simple_setting_item_style"
+                    android:id="@+id/item_user_agreement"
+                    app:z_setting_titleText="用户协议"
+                    />
+
+                <com.zpj.widget.setting.CommonSettingItem
+                    style="@style/simple_setting_item_style"
+                    android:id="@+id/item_privacy_agreement"
+                    app:z_setting_titleText="隐私协议"
+                    />
+
+                <com.zpj.widget.setting.CommonSettingItem
+                    style="@style/simple_setting_item_style"
+                    android:id="@+id/item_check_update"
+                    app:z_setting_titleText="检查更新"
+                    app:z_setting_rightText="v1.0.0"
+                    />
+
+            </LinearLayout>
+
+
+        </com.zpj.appmanager.ui.widget.ElasticScrollView>
+
+        <View style="@style/layout_shadow_bottom"/>
+
+    </FrameLayout>
+
+</LinearLayout>

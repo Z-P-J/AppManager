@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="?attr/selectableItemBackground"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_margin="8dp"
+        android:layout_gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toEndOf="@id/iv_icon"
+        android:layout_centerVertical="true"
+        android:layout_margin="8dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="文件夹"
+            android:textSize="16sp"
+            android:textColor="?attr/textColorMajor" />
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:gravity="center_vertical"
+            android:ellipsize="end"
+            android:text="文件： 文件夹："
+            android:paddingTop="1dp"
+            android:paddingBottom="1dp"
+            android:textColor="?attr/textColorNormal"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:gravity="center_vertical"
+            android:ellipsize="end"
+            android:text="文件： 文件夹："
+            android:paddingTop="1dp"
+            android:paddingBottom="1dp"
+            android:textColor="?attr/textColorMinor"
+            android:textSize="12sp"
+            />
+<!--        @android:color/darker_gray-->
+
+    </LinearLayout>
+
+</RelativeLayout>

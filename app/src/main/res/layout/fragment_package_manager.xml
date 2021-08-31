@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+
+    >
+
+    <include layout="@layout/layout_toolbar"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible"
+        />
+
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tool_bar"
+        >
+
+        <TextView
+            android:id="@+id/tv_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全部安装包"
+            android:paddingVertical="@dimen/dp_4"
+            android:layout_centerVertical="true"
+            android:textColor="?attr/textColorMajor"
+            />
+
+        <com.zpj.appmanager.ui.widget.ExpandIcon
+            android:id="@+id/expand_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/tv_filter"
+            app:eiv_color="?attr/textColorMajor"
+            app:eiv_roundedCorners="true"
+            app:eiv_padding="@dimen/dp_4"
+            />
+
+
+        <ImageView
+            android:id="@+id/iv_sort"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_sort"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:tint="?attr/textColorMajor"
+            android:background="?attr/actionBarItemBackground"
+            />
+
+    </RelativeLayout>
+
+    <com.zpj.recyclerview.EasyRecyclerLayout
+        app:layout_constraintTop_toBottomOf="@+id/layout_header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/sortView"
+        android:id="@+id/recycler_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <View style="@style/layout_shadow_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_4"
+        app:layout_constraintTop_toBottomOf="@+id/layout_header" />
+
+    <com.zpj.appmanager.ui.widget.LetterSortSideBar
+        app:layout_constraintTop_toBottomOf="@+id/layout_header"
+        app:layout_constraintBottom_toBottomOf="@id/recycler_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/sortView"
+        android:layout_width="24dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/dp_4"
+        app:sidebarSelectTextColor="@color/colorPrimary"
+        app:sidebarUnSelectTextColor="?attr/textColorNormal"
+        app:sidebarSelectTextSize="12sp"
+        app:sidebarUnSelectTextSize="10sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_hint"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="@drawable/bg_button_round_green"
+        android:gravity="center"
+        android:textColor="#ffffffff"
+        android:text="A"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/layout_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_button_round_green"
+        android:paddingVertical="@dimen/dp_4"
+        android:paddingHorizontal="@dimen/dp_8"
+        app:layout_constraintBottom_toBottomOf="@id/recycler_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <com.zpj.progressbar.ZProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginEnd="@dimen/dp_4"
+            android:layout_gravity="center"
+            app:zbp_radius="@dimen/dp_8"
+            app:zbp_progress_bar_color="@color/white"
+            app:zbp_progress_bar_width="1dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="扫描中..."
+            android:textSize="10sp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:padding="5dp"
+        android:background="@drawable/top_line_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_toStartOf="@id/checkbox"
+            android:layout_width="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_height="match_parent">
+
+            <com.zpj.appmanager.ui.widget.GradientButton
+                android:id="@+id/btn_uninstall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                app:button_radius="2dp"
+                app:button_text="卸载"
+                app:button_start_color="#ea5455"
+                app:button_end_color="#feb692"
+                app:button_gradient_orientation="BL_TR"
+                app:button_text_color="#ffffff"
+                app:button_is_shadowed="false"
+                app:button_padding_start="20dp"
+                app:button_padding_end="20dp"
+                app:button_padding_top="5dp"
+                app:button_padding_bottom="5dp"
+                />
+
+            <com.zpj.appmanager.ui.widget.GradientButton
+                android:id="@+id/btn_backup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                app:button_radius="2dp"
+                app:button_text="备份"
+                app:button_start_color="@color/colorPrimary"
+                app:button_end_color="#28c76f"
+                app:button_gradient_orientation="BL_TR"
+                app:button_is_shadowed="false"
+                app:button_text_color="#ffffff"
+                app:button_padding_start="20dp"
+                app:button_padding_end="20dp"
+                app:button_padding_top="5dp"
+                app:button_padding_bottom="5dp"
+                />
+
+
+        </LinearLayout>
+
+        <com.zpj.widget.checkbox.SmoothCheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:color_checked="@color/colorPrimary"
+            />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
