@@ -12,9 +12,9 @@ import android.widget.TextView;
 import com.zpj.appmanager.R;
 import com.zpj.appmanager.ui.fragment.base.SkinFragment;
 import com.zpj.appmanager.ui.widget.flowlayout.FlowLayout;
+import com.zpj.bus.ZBus;
 import com.zpj.fragmentation.dialog.ZDialog;
 import com.zpj.recyclerview.EasyRecyclerView;
-import com.zpj.rxbus.RxBus;
 import com.zpj.appmanager.database.SearchHistoryManager;
 import com.zpj.appmanager.model.GuessAppInfo;
 import com.zpj.appmanager.model.QuickAppInfo;
@@ -49,9 +49,9 @@ public class SearchPanelFragment extends SkinFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EventBus.onSearchEvent(this, new RxBus.SingleConsumer<String>() {
+        EventBus.onSearchEvent(this, new ZBus.SingleConsumer<String>() {
             @Override
-            public void onAccept(String keyword) throws Exception {
+            public void onAccept(String keyword) {
                 SearchHistory history = SearchHistoryManager.getSearchHistoryByText(keyword);
                 if (history == null) {
                     history = new SearchHistory();

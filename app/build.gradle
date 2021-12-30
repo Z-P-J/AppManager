@@ -74,7 +74,7 @@ dependencies {
     // RxJava
     implementation 'io.reactivex.rxjava2:rxjava:2.2.17'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
-    implementation 'com.github.Z-P-J:RxBus:1.0.0'
+//    implementation 'com.github.Z-P-J:RxBus:1.0.0'
     implementation 'com.github.Z-P-J:RxLife:1.0.0'
 
     // 图片相关
@@ -144,5 +144,7 @@ dependencies {
     implementation 'com.github.Z-P-J:ZToolBar:1.0.0'
     implementation 'com.github.Z-P-J:StateManager:1.0.0'
     implementation 'com.github.Z-P-J:SmoothCheckBox:1.0.0'
+
+    implementation project(':bus')
 
 }

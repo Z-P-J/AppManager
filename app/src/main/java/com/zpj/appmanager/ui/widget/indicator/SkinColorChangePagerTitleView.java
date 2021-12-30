@@ -4,10 +4,10 @@ import android.content.Context;
 import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
 
-import com.zpj.rxbus.RxBus;
 import com.zpj.appmanager.R;
 import com.zpj.appmanager.constant.AppConfig;
 import com.zpj.appmanager.utils.EventBus;
+import com.zpj.bus.ZBus;
 
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ColorTransitionPagerTitleView;
 
@@ -20,11 +20,11 @@ public class SkinColorChangePagerTitleView extends ColorTransitionPagerTitleView
         int normalTextColor = ContextCompat.getColor(context, R.color.color_text_normal);
         setNormalColor(normalTextColor);
         setSelectedColor(ContextCompat.getColor(context, R.color.colorPrimary));
-        RxBus.observe(this, EventBus.KEY_COLOR_CHANGE_EVENT, Boolean.class)
-                .bindView(this)
-                .doOnNext(new RxBus.SingleConsumer<Boolean>() {
+        ZBus.with(this)
+                .observe(EventBus.KEY_COLOR_CHANGE_EVENT, Boolean.class)
+                .doOnChange(new ZBus.SingleConsumer<Boolean>() {
                     @Override
-                    public void onAccept(Boolean isDark) throws Exception {
+                    public void onAccept(Boolean isDark) {
                         int color = (AppConfig.isNightMode() || isDark) ? (AppConfig.isNightMode() ? Color.LTGRAY : Color.WHITE) : normalTextColor;
                         setNormalColor(color);
                         if (!isSelected) {

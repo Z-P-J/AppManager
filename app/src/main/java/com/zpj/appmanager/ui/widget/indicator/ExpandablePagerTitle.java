@@ -9,11 +9,11 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.zpj.rxbus.RxBus;
 import com.zpj.appmanager.R;
 import com.zpj.appmanager.constant.Actions;
 import com.zpj.appmanager.ui.fragment.dialog.RecyclerPartShadowDialogFragment;
 import com.zpj.appmanager.ui.widget.ExpandIcon;
+import com.zpj.bus.ZBus;
 import com.zpj.skin.SkinEngine;
 
 import net.lucode.hackware.magicindicator.buildins.ArgbEvaluatorHolder;
@@ -85,7 +85,7 @@ public class ExpandablePagerTitle extends CommonPagerTitleView {
                         .setOnItemClickListener((view1, title, position) -> {
                             currentPosition = position;
                             tvTitle.setText(title);
-                            RxBus.post(Actions.ACTION_SEND_VIEW_PAGER_INDEX, position);
+                            ZBus.post(Actions.ACTION_SEND_VIEW_PAGER_INDEX, position);
                         })
                         .setAttachView(ExpandablePagerTitle.this)
                         .setOnDismissListener(ivExpand::switchState)

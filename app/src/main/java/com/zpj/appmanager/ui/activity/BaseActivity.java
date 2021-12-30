@@ -9,12 +9,12 @@ import android.support.v7.app.AppCompatDelegate;
 import android.view.LayoutInflater;
 
 import com.bumptech.glide.Glide;
+import com.zpj.bus.ZBus;
 import com.zpj.fragmentation.SupportActivity;
 import com.zpj.fragmentation.SupportFragment;
 import com.zpj.fragmentation.anim.DefaultHorizontalAnimator;
 import com.zpj.fragmentation.anim.FragmentAnimator;
 import com.zpj.fragmentation.dialog.impl.LoadingDialogFragment;
-import com.zpj.rxbus.RxBus;
 import com.zpj.appmanager.utils.EventBus;
 import com.zpj.toast.ZToast;
 import com.zpj.skin.SkinLayoutInflater;
@@ -74,9 +74,9 @@ public class BaseActivity extends SupportActivity {
 
 //        registerObserver(SupportFragment.class, this::start);
 
-        EventBus.onShowLoadingEvent(this, new RxBus.PairConsumer<String, Boolean>() {
+        EventBus.onShowLoadingEvent(this, new ZBus.PairConsumer<String, Boolean>() {
             @Override
-            public void onAccept(String text, Boolean isUpdate) throws Exception {
+            public void onAccept(String text, Boolean isUpdate) {
                 if (loadingDialogFragment != null) {
                     if (isUpdate) {
                         loadingDialogFragment.setTitle(text);

@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 1.5.69
 # min_api: 19
-# pg_map_id: 8eb1957
+# pg_map_id: 4d83884
 android.arch.core.executor.ArchTaskExecutor -> a.a.a.a.a:
     android.arch.core.executor.ArchTaskExecutor sInstance -> c
     android.arch.core.executor.TaskExecutor mDelegate -> a
@@ -26648,34 +26648,34 @@ com.zpj.appmanager.R$array -> com.zpj.appmanager.R$array:
 com.zpj.appmanager.R$attr -> com.zpj.appmanager.R$attr:
     61:61:void <init>() -> <init>
 com.zpj.appmanager.R$bool -> com.zpj.appmanager.R$bool:
-    6694:6694:void <init>() -> <init>
+    7247:7247:void <init>() -> <init>
 com.zpj.appmanager.R$color -> com.zpj.appmanager.R$color:
-    6700:6700:void <init>() -> <init>
-com.zpj.appmanager.R$dimen -> com.zpj.appmanager.R$dimen:
-    7009:7009:void <init>() -> <init>
-com.zpj.appmanager.R$drawable -> com.zpj.appmanager.R$drawable:
     7253:7253:void <init>() -> <init>
+com.zpj.appmanager.R$dimen -> com.zpj.appmanager.R$dimen:
+    7562:7562:void <init>() -> <init>
+com.zpj.appmanager.R$drawable -> com.zpj.appmanager.R$drawable:
+    7806:7806:void <init>() -> <init>
 com.zpj.appmanager.R$id -> com.zpj.appmanager.R$id:
-    7597:7597:void <init>() -> <init>
+    8150:8150:void <init>() -> <init>
 com.zpj.appmanager.R$integer -> com.zpj.appmanager.R$integer:
-    8076:8076:void <init>() -> <init>
+    8629:8629:void <init>() -> <init>
 com.zpj.appmanager.R$interpolator -> com.zpj.appmanager.R$interpolator:
-    8093:8093:void <init>() -> <init>
+    8646:8646:void <init>() -> <init>
 com.zpj.appmanager.R$layout -> com.zpj.appmanager.R$layout:
-    8099:8099:void <init>() -> <init>
+    8652:8652:void <init>() -> <init>
 com.zpj.appmanager.R$menu -> com.zpj.appmanager.R$menu:
-    8247:8247:void <init>() -> <init>
+    8800:8800:void <init>() -> <init>
 com.zpj.appmanager.R$mipmap -> com.zpj.appmanager.R$mipmap:
-    8256:8256:void <init>() -> <init>
+    8809:8809:void <init>() -> <init>
 com.zpj.appmanager.R$string -> com.zpj.appmanager.R$string:
-    8260:8260:void <init>() -> <init>
+    8813:8813:void <init>() -> <init>
 com.zpj.appmanager.R$style -> com.zpj.appmanager.R$style:
-    8390:8390:void <init>() -> <init>
+    8943:8943:void <init>() -> <init>
 com.zpj.appmanager.R$styleable -> com.zpj.appmanager.R$styleable:
-    8979:27316:void <clinit>() -> <clinit>
-    8911:8911:void <init>() -> <init>
+    9536:28661:void <clinit>() -> <clinit>
+    9464:9464:void <init>() -> <init>
 com.zpj.appmanager.R$xml -> com.zpj.appmanager.R$xml:
-    27642:27642:void <init>() -> <init>
+    29016:29016:void <init>() -> <init>
 com.zpj.appmanager.constant.AppConfig -> com.zpj.appmanager.b.a:
     9:9:void <clinit>() -> <clinit>
     35:35:boolean isNightMode() -> a
@@ -26989,12 +26989,12 @@ com.zpj.appmanager.receiver.AppReceiver -> com.zpj.appmanager.receiver.AppReceiv
     27:40:void register(android.content.Context) -> a
     43:51:void unregister(android.content.Context) -> b
     77:88:void onReceive(android.content.Context,android.content.Intent) -> onReceive
-com.zpj.appmanager.ui.activity.-$$Lambda$BMa08sL4IG6MGyOfKpo5VXkpOJM -> com.zpj.appmanager.ui.activity.a:
+com.zpj.appmanager.ui.activity.-$$Lambda$BaseActivity$iPQKj8Leihz2Nm7jxGKXjqx3Ig4 -> com.zpj.appmanager.ui.activity.a:
     com.zpj.appmanager.ui.activity.BaseActivity f$0 -> a
-com.zpj.appmanager.ui.activity.-$$Lambda$BaseActivity$lbpf0Xk12Kff8MXUUTYTAuVir4E -> com.zpj.appmanager.ui.activity.b:
-    com.zpj.appmanager.ui.activity.BaseActivity f$0 -> a
-com.zpj.appmanager.ui.activity.-$$Lambda$MainActivity$ti0XeqXSrA0JaOBJZSqLJo4teeQ -> com.zpj.appmanager.ui.activity.c:
+com.zpj.appmanager.ui.activity.-$$Lambda$MainActivity$ti0XeqXSrA0JaOBJZSqLJo4teeQ -> com.zpj.appmanager.ui.activity.b:
     com.zpj.appmanager.ui.activity.-$$Lambda$MainActivity$ti0XeqXSrA0JaOBJZSqLJo4teeQ INSTANCE -> a
+com.zpj.appmanager.ui.activity.-$$Lambda$ZrJv3cXCI2ixjrb2WrMQQHvTGU8 -> com.zpj.appmanager.ui.activity.c:
+    com.zpj.appmanager.ui.activity.BaseActivity f$0 -> a
 com.zpj.appmanager.ui.activity.BaseActivity -> com.zpj.appmanager.ui.activity.BaseActivity:
     com.zpj.fragmentation.dialog.impl.LoadingDialogFragment loadingDialogFragment -> d
     long firstTime -> b
@@ -28082,40 +28082,38 @@ com.zpj.appmanager.ui.widget.setting.SkinChangeSettingItem -> com.zpj.appmanager
     32:32:boolean lambda$new$0(android.view.View) -> a
     37:47:void onItemClick() -> a
     51:55:boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
-com.zpj.appmanager.utils.-$$Lambda$FileScanner$M2aaqmI_mek1iQzZILqe3bq5_hg -> com.zpj.appmanager.utils.a:
+com.zpj.appmanager.utils.-$$Lambda$EventBus$b6_tiN7mz2mbX6Z9qMo1PYjSNQc -> com.zpj.appmanager.utils.a:
+    com.zpj.appmanager.ui.activity.MainActivity f$0 -> a
+com.zpj.appmanager.utils.-$$Lambda$FileScanner$M2aaqmI_mek1iQzZILqe3bq5_hg -> com.zpj.appmanager.utils.b:
     com.zpj.appmanager.utils.FileScanner f$0 -> a
     com.zpj.appmanager.utils.FileScanner$OnScanListener f$1 -> b
     void subscribe(io.reactivex.ObservableEmitter) -> a
-com.zpj.appmanager.utils.-$$Lambda$FileScanner$ScannerTask$AM2ke5r2AHIGXVJeku1oO7OviKQ -> com.zpj.appmanager.utils.b:
+com.zpj.appmanager.utils.-$$Lambda$FileScanner$ScannerTask$AM2ke5r2AHIGXVJeku1oO7OviKQ -> com.zpj.appmanager.utils.c:
     com.zpj.appmanager.utils.FileScanner$ScannerTask f$0 -> a
     void subscribe(io.reactivex.ObservableEmitter) -> a
-com.zpj.appmanager.utils.AppUtil -> com.zpj.appmanager.utils.c:
+com.zpj.appmanager.utils.AppUtil -> com.zpj.appmanager.utils.d:
     17:22:java.lang.String getDefaultAppBackupFolder() -> a
     30:31:void backupApp(com.zpj.appmanager.model.InstalledAppInfo) -> a
     26:26:java.io.File getAppBackupFile(com.zpj.appmanager.model.InstalledAppInfo) -> b
-com.zpj.appmanager.utils.EventBus -> com.zpj.appmanager.utils.d:
-    59:70:void onGetActivityEvent(com.zpj.appmanager.ui.activity.MainActivity) -> a
-    73:74:void sendSkinChangeEvent() -> a
-    128:143:void onHideLoadingEvent(android.arch.lifecycle.LifecycleOwner,io.reactivex.functions.Consumer) -> a
-    154:158:void onShowLoadingEvent(android.arch.lifecycle.LifecycleOwner,com.zpj.rxbus.RxBus$PairConsumer) -> a
-    168:172:void registerObserver(android.arch.lifecycle.LifecycleOwner,java.lang.Class,io.reactivex.functions.Consumer) -> a
-com.zpj.appmanager.utils.EventBus$1 -> com.zpj.appmanager.utils.d$a:
-    com.zpj.appmanager.ui.activity.MainActivity val$mainActivity -> a
-    61:61:void <init>(com.zpj.appmanager.ui.activity.MainActivity) -> <init>
-    64:67:void accept(com.zpj.appmanager.utils.EventBus$GetActivityEvent) -> a
-    61:61:void accept(java.lang.Object) -> accept
-com.zpj.appmanager.utils.EventBus$2 -> com.zpj.appmanager.utils.d$b:
-    io.reactivex.functions.Consumer val$consumer -> a
-    130:130:void <init>(io.reactivex.functions.Consumer) -> <init>
-    130:130:void onAccept(java.lang.Object) -> a
-    133:140:void onAccept(com.zpj.appmanager.utils.EventBus$NullableObject) -> a
-com.zpj.appmanager.utils.EventBus$GetActivityEvent -> com.zpj.appmanager.utils.d$c:
+com.zpj.appmanager.utils.EventBus -> com.zpj.appmanager.utils.e:
+    58:67:void onGetActivityEvent(com.zpj.appmanager.ui.activity.MainActivity) -> a
+    62:65:void lambda$onGetActivityEvent$0(com.zpj.appmanager.ui.activity.MainActivity,com.zpj.appmanager.utils.EventBus$GetActivityEvent) -> a
+    70:71:void sendSkinChangeEvent() -> a
+    125:140:void onHideLoadingEvent(android.arch.lifecycle.LifecycleOwner,com.zpj.bus.Consumer) -> a
+    151:155:void onShowLoadingEvent(android.arch.lifecycle.LifecycleOwner,com.zpj.bus.ZBus$PairConsumer) -> a
+    166:170:void registerObserver(android.arch.lifecycle.LifecycleOwner,java.lang.Class,com.zpj.bus.Consumer) -> a
+com.zpj.appmanager.utils.EventBus$1 -> com.zpj.appmanager.utils.e$a:
+    com.zpj.bus.Consumer val$consumer -> a
+    127:127:void <init>(com.zpj.bus.Consumer) -> <init>
+    127:127:void onAccept(java.lang.Object) -> a
+    130:137:void onAccept(com.zpj.appmanager.utils.EventBus$NullableObject) -> a
+com.zpj.appmanager.utils.EventBus$GetActivityEvent -> com.zpj.appmanager.utils.e$b:
     com.zpj.utils.Callback callback -> a
-    44:44:com.zpj.utils.Callback access$100(com.zpj.appmanager.utils.EventBus$GetActivityEvent) -> a
-com.zpj.appmanager.utils.EventBus$NullableObject -> com.zpj.appmanager.utils.d$d:
+    43:43:com.zpj.utils.Callback access$200(com.zpj.appmanager.utils.EventBus$GetActivityEvent) -> a
+com.zpj.appmanager.utils.EventBus$NullableObject -> com.zpj.appmanager.utils.e$c:
     java.lang.Object o -> a
-    107:107:java.lang.Object getObject() -> a
-com.zpj.appmanager.utils.FileScanner -> com.zpj.appmanager.utils.e:
+    104:104:java.lang.Object getObject() -> a
+com.zpj.appmanager.utils.FileScanner -> com.zpj.appmanager.utils.f:
     java.util.List taskList -> b
     android.arch.lifecycle.LifecycleOwner lifecycleOwner -> d
     java.util.concurrent.ConcurrentLinkedQueue folderList -> a
@@ -28127,19 +28125,19 @@ com.zpj.appmanager.utils.FileScanner -> com.zpj.appmanager.utils.e:
     121:177:void start(com.zpj.appmanager.utils.FileScanner$OnScanListener) -> a
     128:136:void lambda$start$0(com.zpj.appmanager.utils.FileScanner$OnScanListener,io.reactivex.ObservableEmitter) -> a
     26:26:java.util.List access$100(com.zpj.appmanager.utils.FileScanner) -> b
-com.zpj.appmanager.utils.FileScanner$1 -> com.zpj.appmanager.utils.e$a:
+com.zpj.appmanager.utils.FileScanner$1 -> com.zpj.appmanager.utils.f$a:
     com.zpj.appmanager.utils.FileScanner$OnScanListener val$onScanListener -> a
     147:147:void <init>(com.zpj.appmanager.utils.FileScanner,com.zpj.appmanager.utils.FileScanner$OnScanListener) -> <init>
     150:153:void onSubscribe(io.reactivex.disposables.Disposable) -> a
     157:160:void onNext(java.lang.Object) -> a
     164:168:void onError(java.lang.Throwable) -> a
     172:175:void onComplete() -> b
-com.zpj.appmanager.utils.FileScanner$OnScanListener -> com.zpj.appmanager.utils.e$b:
+com.zpj.appmanager.utils.FileScanner$OnScanListener -> com.zpj.appmanager.utils.f$b:
     void onScanEnd() -> a
     void onScanningFiles(java.lang.Object) -> a
     java.lang.Object onWrapFile(java.io.File) -> a
     void onScanBegin() -> b
-com.zpj.appmanager.utils.FileScanner$ScannerTask -> com.zpj.appmanager.utils.e$c:
+com.zpj.appmanager.utils.FileScanner$ScannerTask -> com.zpj.appmanager.utils.f$c:
     com.zpj.appmanager.utils.FileScanner this$0 -> e
     android.arch.lifecycle.LifecycleOwner lifecycleOwner -> d
     com.zpj.appmanager.utils.FileScanner$OnScanListener onScanListener -> b
@@ -28148,17 +28146,17 @@ com.zpj.appmanager.utils.FileScanner$ScannerTask -> com.zpj.appmanager.utils.e$c
     45:51:void <init>(com.zpj.appmanager.utils.FileScanner,io.reactivex.ObservableEmitter,com.zpj.appmanager.utils.FileScanner$OnScanListener,java.lang.String,android.arch.lifecycle.LifecycleOwner) -> <init>
     54:105:void start() -> a
     56:96:void lambda$start$0(io.reactivex.ObservableEmitter) -> a
-com.zpj.appmanager.utils.PackageStateComparator -> com.zpj.appmanager.utils.f:
+com.zpj.appmanager.utils.PackageStateComparator -> com.zpj.appmanager.utils.g:
     com.zpj.appmanager.utils.PinyinComparator pinyinComparator -> a
     7:9:void <init>() -> <init>
     13:31:int compare(com.zpj.appmanager.model.InstalledAppInfo,com.zpj.appmanager.model.InstalledAppInfo) -> a
     7:7:int compare(java.lang.Object,java.lang.Object) -> compare
-com.zpj.appmanager.utils.PinyinComparator -> com.zpj.appmanager.utils.g:
+com.zpj.appmanager.utils.PinyinComparator -> com.zpj.appmanager.utils.h:
     7:7:void <init>() -> <init>
     15:31:int compare(com.zpj.appmanager.utils.PinyinComparator$PinyinComparable,com.zpj.appmanager.utils.PinyinComparator$PinyinComparable) -> a
     36:87:int compare(char,char) -> a
     7:7:int compare(java.lang.Object,java.lang.Object) -> compare
-com.zpj.appmanager.utils.PinyinComparator$PinyinComparable -> com.zpj.appmanager.utils.g$a:
+com.zpj.appmanager.utils.PinyinComparator$PinyinComparable -> com.zpj.appmanager.utils.h$a:
 com.zpj.appmanager.utils.SkinChangeAnimation -> com.zpj.appmanager.utils.SkinChangeAnimation:
     android.content.Context context -> a
     android.view.ViewGroup mRootView -> b
@@ -28304,6 +28302,187 @@ com.zpj.blur.ZBlurry$Callback -> b.c.a.f$c:
     void down(android.graphics.Bitmap) -> a
 com.zpj.blur.ZBlurry$SnapshotInterceptor -> b.c.a.f$d:
     android.graphics.Bitmap snapshot(com.zpj.blur.BitmapProcessor,android.view.View,int,int,float,boolean) -> a
+com.zpj.bus.Consumer -> com.zpj.bus.a:
+com.zpj.bus.EventLiveData -> com.zpj.bus.b:
+    java.util.Map mObservers -> a
+    java.lang.Object NOT_SET -> f
+    java.util.concurrent.atomic.AtomicInteger mVersion -> c
+    java.util.concurrent.atomic.AtomicInteger mActiveCount -> b
+    java.lang.Object mData -> e
+    boolean mIsStickyEvent -> d
+    18:18:void <clinit>() -> <clinit>
+    31:33:void <init>(boolean) -> <init>
+    15:15:java.util.concurrent.atomic.AtomicInteger access$500(com.zpj.bus.EventLiveData) -> a
+    41:41:void onActive() -> a
+    50:66:void observe(com.zpj.bus.EventLiveData$LiveDataObserver) -> a
+    106:112:void postValue(java.lang.Object) -> a
+    15:15:boolean access$600(com.zpj.bus.EventLiveData) -> b
+    44:47:void onInactive() -> b
+    75:83:void removeObserver(com.zpj.bus.EventLiveData$LiveDataObserver) -> b
+    15:15:java.lang.Object access$700(com.zpj.bus.EventLiveData) -> c
+    15:15:java.util.concurrent.atomic.AtomicInteger access$800(com.zpj.bus.EventLiveData) -> d
+com.zpj.bus.EventLiveData$1 -> com.zpj.bus.b$a:
+com.zpj.bus.EventLiveData$LiveDataObserver -> com.zpj.bus.b$b:
+    void onDetach() -> a
+    void onAttach() -> c
+com.zpj.bus.EventLiveData$ObserverWrapper -> com.zpj.bus.b$c:
+    com.zpj.bus.EventLiveData$LiveDataObserver mObserver -> a
+    com.zpj.bus.EventLiveData this$0 -> d
+    boolean mActive -> b
+    int mLastVersion -> c
+    152:152:void <init>(com.zpj.bus.EventLiveData,com.zpj.bus.EventLiveData$LiveDataObserver,com.zpj.bus.EventLiveData$1) -> <init>
+    157:159:void <init>(com.zpj.bus.EventLiveData,com.zpj.bus.EventLiveData$LiveDataObserver) -> <init>
+    152:152:void access$100(com.zpj.bus.EventLiveData$ObserverWrapper,int) -> a
+    152:152:void access$200(com.zpj.bus.EventLiveData$ObserverWrapper,boolean) -> a
+    152:152:void access$300(com.zpj.bus.EventLiveData$ObserverWrapper) -> a
+    152:152:void access$400(com.zpj.bus.EventLiveData$ObserverWrapper,java.lang.Object,int) -> a
+    168:174:boolean compareOrUpdateVersion(int) -> a
+    184:184:void detachObserver() -> a
+    187:186:void activeStateChanged(boolean) -> a
+    212:211:void considerNotify(java.lang.Object,int) -> a
+    162:164:void updateVersion(int) -> b
+    178:180:boolean shouldBeActive() -> b
+com.zpj.bus.EventObserver -> com.zpj.bus.c:
+    com.zpj.bus.EventObserver bindLifecycle(android.arch.lifecycle.LifecycleOwner) -> a
+    com.zpj.bus.EventObserver bindView(android.view.View) -> a
+    com.zpj.bus.EventObserver doOnChange(java.lang.Object) -> a
+    com.zpj.bus.EventObserver bindTag(java.lang.Object) -> b
+    void subscribe() -> b
+com.zpj.bus.EventObserverImpl -> com.zpj.bus.EventObserverImpl:
+    java.util.Set mLifecycleObservers -> c
+    java.util.Set mTags -> d
+    com.zpj.bus.Consumer mOnChange -> f
+    java.lang.Runnable mOnDetach -> h
+    java.lang.Runnable mOnAttach -> g
+    java.util.WeakHashMap mAttachViews -> e
+    com.zpj.bus.EventLiveData mLiveData -> a
+    com.zpj.bus.Schedulers$Scheduler mScheduler -> b
+    39:40:void <init>(com.zpj.bus.EventLiveData) -> <init>
+    42:47:void <init>(com.zpj.bus.EventLiveData,java.lang.String) -> <init>
+    23:23:com.zpj.bus.Consumer access$300(com.zpj.bus.EventObserverImpl) -> a
+    23:23:com.zpj.bus.EventObserver doOnChange(java.lang.Object) -> a
+    62:63:com.zpj.bus.EventObserver bindTag(java.lang.Object,boolean) -> a
+    68:74:com.zpj.bus.EventObserver bindView(android.view.View) -> a
+    79:79:com.zpj.bus.EventObserver bindLifecycle(android.arch.lifecycle.LifecycleOwner) -> a
+    84:90:com.zpj.bus.EventObserver bindLifecycle(android.arch.lifecycle.LifecycleOwner,android.arch.lifecycle.Lifecycle$Event) -> a
+    96:97:com.zpj.bus.EventObserver doOnChange(com.zpj.bus.Consumer) -> a
+    131:140:void onDetach() -> a
+    214:222:void execute(java.lang.Runnable) -> a
+    23:23:void access$400(com.zpj.bus.EventObserverImpl) -> b
+    57:57:com.zpj.bus.EventObserver bindTag(java.lang.Object) -> b
+    119:120:void subscribe() -> b
+    124:127:void onAttach() -> c
+    225:226:void detach() -> d
+    184:184:boolean isActive() -> isActive
+    189:197:void onChanged(java.lang.Object) -> onChanged
+    202:202:void onViewAttachedToWindow(android.view.View) -> onViewAttachedToWindow
+    206:208:void onViewDetachedFromWindow(android.view.View) -> onViewDetachedFromWindow
+com.zpj.bus.EventObserverImpl$1 -> com.zpj.bus.EventObserverImpl$a:
+    com.zpj.bus.EventObserverImpl this$0 -> b
+    java.lang.Object val$t -> a
+    190:190:void <init>(com.zpj.bus.EventObserverImpl,java.lang.Object) -> <init>
+    193:194:void run() -> run
+com.zpj.bus.EventObserverImpl$LifecycleBoundObserver -> com.zpj.bus.EventObserverImpl$LifecycleBoundObserver:
+    com.zpj.bus.EventObserverImpl mObserver -> b
+    android.arch.lifecycle.Lifecycle$Event mEvent -> c
+    android.arch.lifecycle.LifecycleOwner mOwner -> a
+    240:244:void <init>(android.arch.lifecycle.LifecycleOwner,com.zpj.bus.EventObserverImpl,android.arch.lifecycle.Lifecycle$Event) -> <init>
+    229:229:void access$000(com.zpj.bus.EventObserverImpl$LifecycleBoundObserver) -> a
+    247:248:void attach() -> a
+    256:259:void onStateChanged(android.arch.lifecycle.LifecycleOwner,android.arch.lifecycle.Lifecycle$Event) -> a
+    229:229:void access$100(com.zpj.bus.EventObserverImpl$LifecycleBoundObserver) -> b
+    251:252:void detach() -> b
+    263:270:boolean equals(java.lang.Object) -> equals
+    275:275:int hashCode() -> hashCode
+com.zpj.bus.Schedulers -> com.zpj.bus.d:
+    43:43:com.zpj.bus.Schedulers$Scheduler main() -> a
+com.zpj.bus.Schedulers$1 -> com.zpj.bus.d$a:
+com.zpj.bus.Schedulers$MainHolder -> com.zpj.bus.d$b:
+    com.zpj.bus.Schedulers$MainScheduler MAIN -> a
+    31:31:void <clinit>() -> <clinit>
+    30:30:com.zpj.bus.Schedulers$MainScheduler access$200() -> a
+com.zpj.bus.Schedulers$MainScheduler -> com.zpj.bus.d$c:
+    android.os.Handler mMainHandler -> b
+    java.lang.Object mLock -> a
+    53:55:void <init>() -> <init>
+    53:53:void <init>(com.zpj.bus.Schedulers$1) -> <init>
+    68:75:android.os.Handler getMainHandler() -> a
+    63:64:void execute(java.lang.Runnable) -> execute
+com.zpj.bus.Schedulers$Scheduler -> com.zpj.bus.d$d:
+com.zpj.bus.ZBus -> com.zpj.bus.f:
+    41:41:com.zpj.bus.ZBus$BusBuilder with(android.arch.lifecycle.LifecycleOwner) -> a
+    45:45:com.zpj.bus.ZBus$BusBuilder with(android.view.View) -> a
+    69:74:void post(java.lang.Object,boolean) -> a
+    77:78:void post(java.lang.Object) -> a
+    81:82:void post(java.lang.String,java.lang.Object) -> a
+com.zpj.bus.ZBus$1 -> com.zpj.bus.e:
+com.zpj.bus.ZBus$BusBuilder -> com.zpj.bus.f$a:
+    java.lang.Object tag -> d
+    android.view.View view -> c
+    com.zpj.bus.ZBus$EventBus bus -> a
+    android.arch.lifecycle.LifecycleOwner owner -> b
+    628:628:void <init>(com.zpj.bus.ZBus$EventBus,com.zpj.bus.ZBus$1) -> <init>
+    639:641:void <init>(com.zpj.bus.ZBus$EventBus) -> <init>
+    628:628:com.zpj.bus.ZBus$BusBuilder access$500(com.zpj.bus.ZBus$BusBuilder,android.arch.lifecycle.LifecycleOwner) -> a
+    628:628:com.zpj.bus.ZBus$BusBuilder access$600(com.zpj.bus.ZBus$BusBuilder,android.view.View) -> a
+    649:650:com.zpj.bus.ZBus$BusBuilder bindLifecycle(android.arch.lifecycle.LifecycleOwner) -> a
+    654:655:com.zpj.bus.ZBus$BusBuilder bindView(android.view.View) -> a
+    659:671:com.zpj.bus.EventObserver wrapObserver(com.zpj.bus.EventObserver) -> a
+    675:675:com.zpj.bus.EventObserver observe(java.lang.Class) -> a
+    683:686:com.zpj.bus.EventObserver observe(java.lang.String,java.lang.Class) -> a
+    692:695:com.zpj.bus.EventObserver observe(java.lang.String,java.lang.Class,java.lang.Class) -> a
+com.zpj.bus.ZBus$CommonBusHolder -> com.zpj.bus.f$b:
+    com.zpj.bus.ZBus$CommonEventBus BUS -> a
+    19:19:void <clinit>() -> <clinit>
+    18:18:com.zpj.bus.ZBus$CommonEventBus access$200() -> a
+com.zpj.bus.ZBus$CommonEventBus -> com.zpj.bus.f$c:
+    346:346:void <init>(com.zpj.bus.ZBus$1) -> <init>
+    349:350:void <init>() -> <init>
+    354:374:void post(java.lang.Object) -> a
+com.zpj.bus.ZBus$EventBus -> com.zpj.bus.f$d:
+    java.util.Map classEventLiveDataMap -> a
+    java.util.Map keyEventLiveDataMap -> b
+    java.util.Map multiEventLiveDataMap -> c
+    boolean isSticky -> d
+    232:234:void <init>(boolean) -> <init>
+    239:246:com.zpj.bus.EventLiveData getLiveData(java.lang.Class) -> a
+    275:292:com.zpj.bus.ZBus$MultiKey findMultiKey(java.lang.String,java.lang.Object[]) -> a
+    296:305:com.zpj.bus.ZBus$MultiKey findMultiKey(java.lang.String,java.lang.Class[]) -> a
+    261:271:com.zpj.bus.EventLiveData getLiveData(java.lang.String,java.lang.Class[]) -> b
+com.zpj.bus.ZBus$MultiEvent -> com.zpj.bus.f$e:
+    java.lang.Object[] objects -> b
+    java.lang.String key -> a
+    597:600:void <init>(java.lang.String,java.lang.Object[]) -> <init>
+    616:620:com.zpj.bus.ZBus$MultiKey createMultiKey() -> a
+    603:603:java.lang.String getKey() -> b
+    607:607:java.lang.Object[] getObjects() -> c
+com.zpj.bus.ZBus$MultiKey -> com.zpj.bus.f$f:
+    java.lang.Class[] classes -> b
+    java.lang.String key -> a
+    556:559:void <init>(java.lang.String,java.lang.Class[]) -> <init>
+    566:566:java.lang.Class[] getClasses() -> a
+    570:570:java.lang.Class getClassAt(int) -> a
+    562:562:java.lang.String getKey() -> b
+    575:583:boolean equals(java.lang.Object) -> equals
+    588:588:int hashCode() -> hashCode
+com.zpj.bus.ZBus$PairConsumer -> com.zpj.bus.f$g:
+    529:529:void <init>() -> <init>
+    void onAccept(java.lang.Object,java.lang.Object) -> a
+    533:534:void accept(com.zpj.bus.ZBus$MultiEvent) -> a
+    529:529:void accept(java.lang.Object) -> accept
+com.zpj.bus.ZBus$SingleConsumer -> com.zpj.bus.f$h:
+    519:519:void <init>() -> <init>
+    void onAccept(java.lang.Object) -> a
+    523:524:void accept(com.zpj.bus.ZBus$MultiEvent) -> a
+    519:519:void accept(java.lang.Object) -> accept
+com.zpj.bus.ZBus$StickyBusHolder -> com.zpj.bus.f$i:
+    com.zpj.bus.ZBus$StickyEventBus BUS -> a
+    23:23:void <clinit>() -> <clinit>
+    22:22:com.zpj.bus.ZBus$StickyEventBus access$700() -> a
+com.zpj.bus.ZBus$StickyEventBus -> com.zpj.bus.f$j:
+    377:377:void <init>(com.zpj.bus.ZBus$1) -> <init>
+    380:381:void <init>() -> <init>
+    385:426:void post(java.lang.Object) -> a
 com.zpj.fragmentation.-$$Lambda$SupportFragmentDelegate$1$c1NGE31vHOl2IhjvqyPGUaeoQ5g -> com.zpj.fragmentation.a:
     com.zpj.fragmentation.SupportFragmentDelegate$1 f$0 -> a
 com.zpj.fragmentation.-$$Lambda$SupportFragmentDelegate$2$OqF1tVed8nEo8gBafVEc2h2x8FY -> com.zpj.fragmentation.b:
@@ -30347,72 +30526,6 @@ com.zpj.recyclerview.state.R$drawable -> com.zpj.recyclerview.state.R$drawable:
     19:19:void <init>() -> <init>
 com.zpj.recyclerview.state.R$string -> com.zpj.recyclerview.state.R$string:
     29:29:void <init>() -> <init>
-com.zpj.rxbus.IObserver -> com.zpj.rxbus.a:
-    com.zpj.rxbus.IObserver bindToLife(android.arch.lifecycle.LifecycleOwner) -> a
-    com.zpj.rxbus.IObserver bindView(android.view.View) -> a
-    com.zpj.rxbus.IObserver doOnNext(java.lang.Object) -> a
-    void subscribe() -> a
-com.zpj.rxbus.R$id -> com.zpj.rxbus.R$id:
-    13:13:void <init>() -> <init>
-com.zpj.rxbus.RxBus -> com.zpj.rxbus.b:
-    com.zpj.rxbus.RxBus INSTANCE -> b
-    io.reactivex.subjects.Subject mSubject -> a
-    39:42:void <init>() -> <init>
-    29:36:com.zpj.rxbus.RxBus get() -> a
-    47:48:void post(java.lang.Object) -> a
-    51:52:void post(java.lang.String,java.lang.Object) -> a
-    168:168:com.zpj.rxbus.IObserver observe(java.lang.Object,java.lang.Class) -> a
-    176:176:com.zpj.rxbus.IObserver observe(java.lang.Object,java.lang.String,java.lang.Class) -> a
-    183:183:com.zpj.rxbus.IObserver observe(java.lang.Object,java.lang.String,java.lang.Class,java.lang.Class) -> a
-    195:195:io.reactivex.Observable toObservable(java.lang.Class) -> a
-    217:217:io.reactivex.Observable toObservable(java.lang.String,java.lang.Class[]) -> a
-com.zpj.rxbus.RxBus$11 -> com.zpj.rxbus.b$a:
-    java.lang.Class[] val$types -> b
-    java.lang.String val$key -> a
-    218:218:void <init>(com.zpj.rxbus.RxBus,java.lang.String,java.lang.Class[]) -> <init>
-    221:225:boolean test(com.zpj.rxbus.RxMultiEvent) -> a
-    218:218:boolean test(java.lang.Object) -> b
-com.zpj.rxbus.RxBus$PairConsumer -> com.zpj.rxbus.b$b:
-    373:373:void <init>() -> <init>
-    void onAccept(java.lang.Object,java.lang.Object) -> a
-    377:378:void accept(com.zpj.rxbus.RxMultiEvent) -> a
-    373:373:void accept(java.lang.Object) -> accept
-com.zpj.rxbus.RxBus$SingleConsumer -> com.zpj.rxbus.b$c:
-    363:363:void <init>() -> <init>
-    void onAccept(java.lang.Object) -> a
-    367:368:void accept(com.zpj.rxbus.RxMultiEvent) -> a
-    363:363:void accept(java.lang.Object) -> accept
-com.zpj.rxbus.RxMultiEvent -> com.zpj.rxbus.c:
-    java.lang.Object[] objects -> b
-    java.lang.String key -> a
-    8:11:void <init>(java.lang.String,java.lang.Object[]) -> <init>
-    14:14:java.lang.String getKey() -> a
-    22:22:java.lang.Object getObject(int) -> a
-    18:18:java.lang.Object[] getObjects() -> b
-com.zpj.rxbus.RxMultiObserver -> com.zpj.rxbus.d:
-    com.zpj.rxbus.RxObserver observer -> a
-    17:19:void <init>(com.zpj.rxbus.RxObserver) -> <init>
-    12:12:com.zpj.rxbus.IObserver doOnNext(java.lang.Object) -> a
-    47:48:com.zpj.rxbus.IObserver bindView(android.view.View) -> a
-    53:54:com.zpj.rxbus.IObserver bindToLife(android.arch.lifecycle.LifecycleOwner) -> a
-    65:66:com.zpj.rxbus.IObserver doOnNext(io.reactivex.functions.Consumer) -> a
-    109:110:void subscribe() -> a
-com.zpj.rxbus.RxObserver -> com.zpj.rxbus.e:
-    io.reactivex.Scheduler subscribeScheduler -> b
-    io.reactivex.functions.Consumer onSubscribe -> h
-    io.reactivex.Scheduler observeScheduler -> c
-    java.util.List composerList -> d
-    io.reactivex.functions.Consumer onNext -> e
-    io.reactivex.functions.Consumer onError -> f
-    io.reactivex.Observable observable -> a
-    io.reactivex.functions.Action onComplete -> g
-    35:42:void <init>(java.lang.Object,io.reactivex.Observable) -> <init>
-    22:22:com.zpj.rxbus.IObserver doOnNext(java.lang.Object) -> a
-    69:70:com.zpj.rxbus.IObserver bindView(android.view.View) -> a
-    75:76:com.zpj.rxbus.IObserver bindToLife(android.arch.lifecycle.LifecycleOwner) -> a
-    87:88:com.zpj.rxbus.IObserver doOnNext(io.reactivex.functions.Consumer) -> a
-    128:146:void subscribe(io.reactivex.functions.Consumer,io.reactivex.functions.Consumer,io.reactivex.functions.Action,io.reactivex.functions.Consumer) -> a
-    150:151:void subscribe() -> a
 com.zpj.rxlife.LifecycleTransformer -> com.zpj.rxlife.a:
     io.reactivex.Observable observable -> a
     46:46:void <clinit>() -> <clinit>
@@ -30435,7 +30548,6 @@ com.zpj.rxlife.RxLife -> com.zpj.rxlife.RxLife:
     23:23:java.util.HashMap access$400() -> a
     34:34:com.zpj.rxlife.LifecycleTransformer bindTag(java.lang.Object) -> a
     38:45:com.zpj.rxlife.LifecycleTransformer bindTag(java.lang.Object,boolean) -> a
-    70:84:com.zpj.rxlife.LifecycleTransformer bindView(android.view.View) -> a
     115:115:com.zpj.rxlife.LifecycleTransformer bindLifeOwner(android.arch.lifecycle.LifecycleOwner) -> a
     121:127:com.zpj.rxlife.LifecycleTransformer bindLifeOwner(android.arch.lifecycle.LifecycleOwner,android.arch.lifecycle.Lifecycle$Event) -> a
     175:175:com.zpj.rxlife.LifecycleTransformer bindNullError(java.lang.String) -> a
@@ -30449,18 +30561,11 @@ com.zpj.rxlife.RxLife -> com.zpj.rxlife.RxLife:
 com.zpj.rxlife.RxLife$1 -> com.zpj.rxlife.RxLife$a:
     java.lang.Object val$tag -> a
     45:45:void <init>(java.lang.Object) -> <init>
-    48:48:boolean test(java.lang.Object) -> b
+    48:48:boolean test(java.lang.Object) -> a
 com.zpj.rxlife.RxLife$2 -> com.zpj.rxlife.RxLife$b:
     java.lang.Object val$event -> a
     193:193:void <init>(java.lang.Object) -> <init>
-    196:196:boolean test(java.lang.Object) -> b
-com.zpj.rxlife.RxLife$AttachListener -> com.zpj.rxlife.RxLife$c:
-    io.reactivex.subjects.PublishSubject lifecycleSubject -> a
-    264:266:void <init>() -> <init>
-    264:264:void <init>(com.zpj.rxlife.RxLife$1) -> <init>
-    264:264:io.reactivex.subjects.PublishSubject access$100(com.zpj.rxlife.RxLife$AttachListener) -> a
-    270:270:void onViewAttachedToWindow(android.view.View) -> onViewAttachedToWindow
-    274:277:void onViewDetachedFromWindow(android.view.View) -> onViewDetachedFromWindow
+    196:196:boolean test(java.lang.Object) -> a
 com.zpj.rxlife.RxLife$RxLifecycleOwner -> com.zpj.rxlife.RxLife$RxLifecycleOwner:
     android.arch.lifecycle.LifecycleRegistry registry -> c
     io.reactivex.subjects.BehaviorSubject lifecycleSubject -> a
@@ -31651,12 +31756,10 @@ io.reactivex.Observable -> c.a.h:
     98:98:void <init>() -> <init>
     1634:1635:io.reactivex.Observable create(io.reactivex.ObservableOnSubscribe) -> a
     1715:1716:io.reactivex.Observable error(java.util.concurrent.Callable) -> a
-    6323:6324:io.reactivex.Observable cast(java.lang.Class) -> a
     6417:6417:io.reactivex.Observable compose(io.reactivex.ObservableTransformer) -> a
     8134:8138:io.reactivex.Observable doOnEach(io.reactivex.functions.Consumer,io.reactivex.functions.Consumer,io.reactivex.functions.Action,io.reactivex.functions.Action) -> a
     8218:8218:io.reactivex.Observable doOnError(io.reactivex.functions.Consumer) -> a
     8420:8421:io.reactivex.Observable filter(io.reactivex.functions.Predicate) -> a
-    9779:9780:io.reactivex.Observable map(io.reactivex.functions.Function) -> a
     9930:9930:io.reactivex.Observable observeOn(io.reactivex.Scheduler) -> a
     10007:10009:io.reactivex.Observable observeOn(io.reactivex.Scheduler,boolean,int) -> a
     12147:12147:io.reactivex.disposables.Disposable subscribe() -> a
@@ -31667,7 +31770,6 @@ io.reactivex.Observable -> c.a.h:
     1741:1742:io.reactivex.Observable error(java.lang.Throwable) -> b
     4085:4089:io.reactivex.Observable wrap(io.reactivex.ObservableSource) -> b
     8263:8263:io.reactivex.Observable doOnNext(io.reactivex.functions.Consumer) -> b
-    10030:10031:io.reactivex.Observable ofType(java.lang.Class) -> b
     12360:12361:io.reactivex.Observable subscribeOn(io.reactivex.Scheduler) -> b
     168:168:int bufferSize() -> c
 io.reactivex.ObservableEmitter -> c.a.i:
@@ -31813,7 +31915,7 @@ io.reactivex.functions.Function -> c.a.s.e:
     java.lang.Object apply(java.lang.Object) -> a
 io.reactivex.functions.LongConsumer -> c.a.s.f:
 io.reactivex.functions.Predicate -> c.a.s.g:
-    boolean test(java.lang.Object) -> b
+    boolean test(java.lang.Object) -> a
 io.reactivex.internal.disposables.DisposableContainer -> c.a.t.a.a:
     boolean delete(io.reactivex.disposables.Disposable) -> a
     boolean remove(io.reactivex.disposables.Disposable) -> b
@@ -31863,63 +31965,53 @@ io.reactivex.internal.functions.Functions -> c.a.t.b.a:
     81:514:void <clinit>() -> <clinit>
     106:106:io.reactivex.functions.Consumer emptyConsumer() -> a
     199:199:java.util.concurrent.Callable justCallable(java.lang.Object) -> a
-    234:234:io.reactivex.functions.Function castFunction(java.lang.Class) -> a
-    366:366:io.reactivex.functions.Predicate isInstanceOf(java.lang.Class) -> b
-io.reactivex.internal.functions.Functions$CastToClass -> c.a.t.b.a$a:
-    java.lang.Class clazz -> a
-    216:218:void <init>(java.lang.Class) -> <init>
-    222:222:java.lang.Object apply(java.lang.Object) -> a
-io.reactivex.internal.functions.Functions$ClassFilter -> c.a.t.b.a$b:
-    java.lang.Class clazz -> a
-    355:357:void <init>(java.lang.Class) -> <init>
-    361:361:boolean test(java.lang.Object) -> b
-io.reactivex.internal.functions.Functions$EmptyAction -> c.a.t.b.a$c:
+io.reactivex.internal.functions.Functions$EmptyAction -> c.a.t.b.a$a:
     674:674:void <init>() -> <init>
     676:676:void run() -> run
     680:680:java.lang.String toString() -> toString
-io.reactivex.internal.functions.Functions$EmptyConsumer -> c.a.t.b.a$d:
+io.reactivex.internal.functions.Functions$EmptyConsumer -> c.a.t.b.a$b:
     684:684:void <init>() -> <init>
     686:686:void accept(java.lang.Object) -> accept
     690:690:java.lang.String toString() -> toString
-io.reactivex.internal.functions.Functions$EmptyLongConsumer -> c.a.t.b.a$e:
+io.reactivex.internal.functions.Functions$EmptyLongConsumer -> c.a.t.b.a$c:
     708:708:void <init>() -> <init>
-io.reactivex.internal.functions.Functions$EmptyRunnable -> c.a.t.b.a$f:
+io.reactivex.internal.functions.Functions$EmptyRunnable -> c.a.t.b.a$d:
     664:664:void <init>() -> <init>
     666:666:void run() -> run
     670:670:java.lang.String toString() -> toString
-io.reactivex.internal.functions.Functions$ErrorConsumer -> c.a.t.b.a$g:
+io.reactivex.internal.functions.Functions$ErrorConsumer -> c.a.t.b.a$e:
     694:694:void <init>() -> <init>
     697:698:void accept(java.lang.Throwable) -> a
     694:694:void accept(java.lang.Object) -> accept
-io.reactivex.internal.functions.Functions$FalsePredicate -> c.a.t.b.a$h:
+io.reactivex.internal.functions.Functions$FalsePredicate -> c.a.t.b.a$f:
     720:720:void <init>() -> <init>
-    723:723:boolean test(java.lang.Object) -> b
-io.reactivex.internal.functions.Functions$Identity -> c.a.t.b.a$i:
+    723:723:boolean test(java.lang.Object) -> a
+io.reactivex.internal.functions.Functions$Identity -> c.a.t.b.a$g:
     652:652:void <init>() -> <init>
     655:655:java.lang.Object apply(java.lang.Object) -> a
     660:660:java.lang.String toString() -> toString
-io.reactivex.internal.functions.Functions$JustValue -> c.a.t.b.a$j:
+io.reactivex.internal.functions.Functions$JustValue -> c.a.t.b.a$h:
     java.lang.Object value -> a
     177:179:void <init>(java.lang.Object) -> <init>
     188:188:java.lang.Object apply(java.lang.Object) -> a
     183:183:java.lang.Object call() -> call
-io.reactivex.internal.functions.Functions$MaxRequestSubscription -> c.a.t.b.a$k:
+io.reactivex.internal.functions.Functions$MaxRequestSubscription -> c.a.t.b.a$i:
     742:742:void <init>() -> <init>
     745:746:void accept(org.reactivestreams.Subscription) -> a
     742:742:void accept(java.lang.Object) -> accept
-io.reactivex.internal.functions.Functions$NaturalObjectComparator -> c.a.t.b.a$l:
+io.reactivex.internal.functions.Functions$NaturalObjectComparator -> c.a.t.b.a$j:
     734:734:void <init>() -> <init>
     738:738:int compare(java.lang.Object,java.lang.Object) -> compare
-io.reactivex.internal.functions.Functions$NullCallable -> c.a.t.b.a$m:
+io.reactivex.internal.functions.Functions$NullCallable -> c.a.t.b.a$k:
     727:727:void <init>() -> <init>
     730:730:java.lang.Object call() -> call
-io.reactivex.internal.functions.Functions$OnErrorMissingConsumer -> c.a.t.b.a$n:
+io.reactivex.internal.functions.Functions$OnErrorMissingConsumer -> c.a.t.b.a$l:
     701:701:void <init>() -> <init>
     704:705:void accept(java.lang.Throwable) -> a
     701:701:void accept(java.lang.Object) -> accept
-io.reactivex.internal.functions.Functions$TruePredicate -> c.a.t.b.a$o:
+io.reactivex.internal.functions.Functions$TruePredicate -> c.a.t.b.a$m:
     713:713:void <init>() -> <init>
-    716:716:boolean test(java.lang.Object) -> b
+    716:716:boolean test(java.lang.Object) -> a
 io.reactivex.internal.functions.ObjectHelper -> c.a.t.b.b:
     83:83:void <clinit>() -> <clinit>
     38:39:java.lang.Object requireNonNull(java.lang.Object,java.lang.String) -> a
@@ -32028,23 +32120,13 @@ io.reactivex.internal.operators.observable.ObservableFromUnsafeSource -> c.a.t.e
     io.reactivex.ObservableSource source -> a
     21:23:void <init>(io.reactivex.ObservableSource) -> <init>
     27:28:void subscribeActual(io.reactivex.Observer) -> b
-io.reactivex.internal.operators.observable.ObservableMap -> c.a.t.e.b.g:
-    io.reactivex.functions.Function function -> b
-    26:28:void <init>(io.reactivex.ObservableSource,io.reactivex.functions.Function) -> <init>
-    32:33:void subscribeActual(io.reactivex.Observer) -> b
-io.reactivex.internal.operators.observable.ObservableMap$MapObserver -> c.a.t.e.b.g$a:
-    io.reactivex.functions.Function mapper -> f
-    39:41:void <init>(io.reactivex.Observer,io.reactivex.functions.Function) -> <init>
-    45:60:void onNext(java.lang.Object) -> a
-    67:67:int requestFusion(int) -> a
-    73:74:java.lang.Object poll() -> c
-io.reactivex.internal.operators.observable.ObservableObserveOn -> c.a.t.e.b.h:
+io.reactivex.internal.operators.observable.ObservableObserveOn -> c.a.t.e.b.g:
     io.reactivex.Scheduler scheduler -> b
     int bufferSize -> d
     boolean delayError -> c
     32:36:void <init>(io.reactivex.ObservableSource,io.reactivex.Scheduler,boolean,int) -> <init>
     40:47:void subscribeActual(io.reactivex.Observer) -> b
-io.reactivex.internal.operators.observable.ObservableObserveOn$ObserveOnObserver -> c.a.t.e.b.h$a:
+io.reactivex.internal.operators.observable.ObservableObserveOn$ObserveOnObserver -> c.a.t.e.b.g$a:
     boolean disposed -> i
     int sourceMode -> j
     boolean outputFused -> k
@@ -32071,11 +32153,11 @@ io.reactivex.internal.operators.observable.ObservableObserveOn$ObserveOnObserver
     160:163:void schedule() -> f
     318:318:boolean isEmpty() -> isEmpty
     252:257:void run() -> run
-io.reactivex.internal.operators.observable.ObservableSubscribeOn -> c.a.t.e.b.i:
+io.reactivex.internal.operators.observable.ObservableSubscribeOn -> c.a.t.e.b.h:
     io.reactivex.Scheduler scheduler -> b
     26:28:void <init>(io.reactivex.ObservableSource,io.reactivex.Scheduler) -> <init>
     32:37:void subscribeActual(io.reactivex.Observer) -> b
-io.reactivex.internal.operators.observable.ObservableSubscribeOn$SubscribeOnObserver -> c.a.t.e.b.i$a:
+io.reactivex.internal.operators.observable.ObservableSubscribeOn$SubscribeOnObserver -> c.a.t.e.b.h$a:
     io.reactivex.Observer downstream -> a
     java.util.concurrent.atomic.AtomicReference upstream -> b
     46:49:void <init>(io.reactivex.Observer) -> <init>
@@ -32085,16 +32167,16 @@ io.reactivex.internal.operators.observable.ObservableSubscribeOn$SubscribeOnObse
     73:75:void dispose() -> a
     68:69:void onComplete() -> b
     83:84:void setDisposable(io.reactivex.disposables.Disposable) -> b
-io.reactivex.internal.operators.observable.ObservableSubscribeOn$SubscribeTask -> c.a.t.e.b.i$b:
+io.reactivex.internal.operators.observable.ObservableSubscribeOn$SubscribeTask -> c.a.t.e.b.h$b:
     io.reactivex.internal.operators.observable.ObservableSubscribeOn$SubscribeOnObserver parent -> a
     io.reactivex.internal.operators.observable.ObservableSubscribeOn this$0 -> b
     90:92:void <init>(io.reactivex.internal.operators.observable.ObservableSubscribeOn,io.reactivex.internal.operators.observable.ObservableSubscribeOn$SubscribeOnObserver) -> <init>
     96:97:void run() -> run
-io.reactivex.internal.operators.observable.ObservableTakeUntil -> c.a.t.e.b.j:
+io.reactivex.internal.operators.observable.ObservableTakeUntil -> c.a.t.e.b.i:
     io.reactivex.ObservableSource other -> b
     28:30:void <init>(io.reactivex.ObservableSource,io.reactivex.ObservableSource) -> <init>
     34:39:void subscribeActual(io.reactivex.Observer) -> b
-io.reactivex.internal.operators.observable.ObservableTakeUntil$TakeUntilMainObserver -> c.a.t.e.b.j$a:
+io.reactivex.internal.operators.observable.ObservableTakeUntil$TakeUntilMainObserver -> c.a.t.e.b.i$a:
     io.reactivex.internal.util.AtomicThrowable error -> d
     io.reactivex.Observer downstream -> a
     java.util.concurrent.atomic.AtomicReference upstream -> b
@@ -32107,7 +32189,7 @@ io.reactivex.internal.operators.observable.ObservableTakeUntil$TakeUntilMainObse
     90:92:void onComplete() -> b
     95:97:void otherError(java.lang.Throwable) -> b
     100:102:void otherComplete() -> c
-io.reactivex.internal.operators.observable.ObservableTakeUntil$TakeUntilMainObserver$OtherObserver -> c.a.t.e.b.j$a$a:
+io.reactivex.internal.operators.observable.ObservableTakeUntil$TakeUntilMainObserver$OtherObserver -> c.a.t.e.b.i$a$a:
     io.reactivex.internal.operators.observable.ObservableTakeUntil$TakeUntilMainObserver this$0 -> a
     104:104:void <init>(io.reactivex.internal.operators.observable.ObservableTakeUntil$TakeUntilMainObserver) -> <init>
     111:112:void onSubscribe(io.reactivex.disposables.Disposable) -> a
@@ -32357,9 +32439,8 @@ io.reactivex.internal.util.AppendOnlyLinkedArrayList -> c.a.t.h.a:
     36:40:void <init>(int) -> <init>
     48:58:void add(java.lang.Object) -> a
     85:99:void forEachWhile(io.reactivex.internal.util.AppendOnlyLinkedArrayList$NonThrowingPredicate) -> a
-    65:66:void setFirst(java.lang.Object) -> b
 io.reactivex.internal.util.AppendOnlyLinkedArrayList$NonThrowingPredicate -> c.a.t.h.a$a:
-    boolean test(java.lang.Object) -> b
+    boolean test(java.lang.Object) -> a
 io.reactivex.internal.util.AtomicThrowable -> c.a.t.h.b:
     24:24:void <init>() -> <init>
     34:34:boolean addThrowable(java.lang.Throwable) -> a
@@ -32385,17 +32466,11 @@ io.reactivex.internal.util.NotificationLite -> c.a.t.h.e:
     103:103:java.lang.Object next(java.lang.Object) -> a
     111:111:java.lang.Object complete() -> a
     120:120:java.lang.Object error(java.lang.Throwable) -> a
-    138:138:java.lang.Object disposable(io.reactivex.disposables.Disposable) -> a
     238:247:boolean accept(java.lang.Object,io.reactivex.Observer) -> a
-    286:299:boolean acceptFull(java.lang.Object,io.reactivex.Observer) -> b
     304:304:java.lang.String toString() -> toString
     26:26:io.reactivex.internal.util.NotificationLite valueOf(java.lang.String) -> valueOf
     26:26:io.reactivex.internal.util.NotificationLite[] values() -> values
-io.reactivex.internal.util.NotificationLite$DisposableNotification -> c.a.t.h.e$a:
-    io.reactivex.disposables.Disposable upstream -> a
-    86:88:void <init>(io.reactivex.disposables.Disposable) -> <init>
-    92:92:java.lang.String toString() -> toString
-io.reactivex.internal.util.NotificationLite$ErrorNotification -> c.a.t.h.e$b:
+io.reactivex.internal.util.NotificationLite$ErrorNotification -> c.a.t.h.e$a:
     java.lang.Throwable e -> a
     37:39:void <init>(java.lang.Throwable) -> <init>
     53:57:boolean equals(java.lang.Object) -> equals
@@ -32503,9 +32578,9 @@ io.reactivex.subjects.BehaviorSubject -> c.a.x.a:
     233:249:void subscribeActual(io.reactivex.Observer) -> b
     287:294:void onComplete() -> b
     421:448:void remove(io.reactivex.subjects.BehaviorSubject$BehaviorDisposable) -> b
-    464:468:void setCurrent(java.lang.Object) -> c
-    454:460:io.reactivex.subjects.BehaviorSubject$BehaviorDisposable[] terminate(java.lang.Object) -> d
-    186:186:io.reactivex.subjects.BehaviorSubject create() -> e
+    464:468:void setCurrent(java.lang.Object) -> b
+    454:460:io.reactivex.subjects.BehaviorSubject$BehaviorDisposable[] terminate(java.lang.Object) -> c
+    186:186:io.reactivex.subjects.BehaviorSubject create() -> d
 io.reactivex.subjects.BehaviorSubject$BehaviorDisposable -> c.a.x.a$a:
     long index -> h
     io.reactivex.Observer downstream -> a
@@ -32518,8 +32593,8 @@ io.reactivex.subjects.BehaviorSubject$BehaviorDisposable -> c.a.x.a$a:
     485:488:void <init>(io.reactivex.Observer,io.reactivex.subjects.BehaviorSubject) -> <init>
     492:497:void dispose() -> a
     539:565:void emitNext(java.lang.Object,long) -> a
+    569:569:boolean test(java.lang.Object) -> a
     505:527:void emitFirst() -> b
-    569:569:boolean test(java.lang.Object) -> b
     574:585:void emitLoop() -> c
 io.reactivex.subjects.PublishSubject -> c.a.x.b:
     io.reactivex.subjects.PublishSubject$PublishDisposable[] TERMINATED -> c
@@ -32535,7 +32610,7 @@ io.reactivex.subjects.PublishSubject -> c.a.x.b:
     134:150:void subscribeActual(io.reactivex.Observer) -> b
     184:186:void remove(io.reactivex.subjects.PublishSubject$PublishDisposable) -> b
     250:256:void onComplete() -> b
-    120:120:io.reactivex.subjects.PublishSubject create() -> e
+    120:120:io.reactivex.subjects.PublishSubject create() -> d
 io.reactivex.subjects.PublishSubject$PublishDisposable -> c.a.x.b$a:
     io.reactivex.subjects.PublishSubject parent -> b
     io.reactivex.Observer downstream -> a
@@ -32545,22 +32620,8 @@ io.reactivex.subjects.PublishSubject$PublishDisposable -> c.a.x.b$a:
     328:331:void dispose() -> a
     335:335:boolean isDisposed() -> b
     321:324:void onComplete() -> c
-io.reactivex.subjects.SerializedSubject -> c.a.x.c:
-    io.reactivex.subjects.Subject actual -> a
-    boolean emitting -> b
-    io.reactivex.internal.util.AppendOnlyLinkedArrayList queue -> c
-    boolean done -> d
-    43:45:void <init>(io.reactivex.subjects.Subject) -> <init>
-    55:82:void onSubscribe(io.reactivex.disposables.Disposable) -> a
-    86:103:void onNext(java.lang.Object) -> a
-    110:132:void onError(java.lang.Throwable) -> a
-    49:50:void subscribeActual(io.reactivex.Observer) -> b
-    142:160:void onComplete() -> b
-    182:182:boolean test(java.lang.Object) -> b
-    168:175:void emitLoop() -> e
-io.reactivex.subjects.Subject -> c.a.x.d:
+io.reactivex.subjects.Subject -> c.a.x.c:
     29:29:void <init>() -> <init>
-    72:75:io.reactivex.subjects.Subject toSerialized() -> d
 kotlin.jvm.internal.DefaultConstructorMarker -> d.a.a.a:
 kotlin.jvm.internal.Intrinsics -> d.a.a.b:
     17:18:void <init>() -> <init>

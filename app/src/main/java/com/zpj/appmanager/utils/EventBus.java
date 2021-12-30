@@ -4,11 +4,10 @@ import android.arch.lifecycle.LifecycleOwner;
 import android.view.View;
 
 import com.zpj.appmanager.ui.activity.MainActivity;
+import com.zpj.bus.Consumer;
+import com.zpj.bus.ZBus;
 import com.zpj.fragmentation.dialog.IDialog;
-import com.zpj.rxbus.RxBus;
 import com.zpj.utils.Callback;
-
-import io.reactivex.functions.Consumer;
 
 public class EventBus {
 
@@ -34,11 +33,11 @@ public class EventBus {
     public static final String KEY_SIGN_UP_EVENT = "event_sign_up";
 
     public static void post(Object o) {
-        RxBus.post(o);
+        ZBus.post(o);
     }
 
     public static void post(Object o, long delay) {
-        RxBus.postDelayed(o, delay);
+        ZBus.postDelayed(o, delay);
     }
 
     private static class GetActivityEvent {
@@ -52,25 +51,23 @@ public class EventBus {
     }
 
     public static void getActivity(Callback<MainActivity> callback) {
-        RxBus.post(new GetActivityEvent(callback));
+        ZBus.post(new GetActivityEvent(callback));
     }
 
     public static void onGetActivityEvent(MainActivity mainActivity) {
-        RxBus.observe(mainActivity, GetActivityEvent.class)
-                .bindToLife(mainActivity)
-                .doOnNext(new Consumer<GetActivityEvent>() {
-                    @Override
-                    public void accept(GetActivityEvent event) throws Exception {
-                        if (event.callback != null) {
-                            event.callback.onCallback(mainActivity);
-                        }
+        ZBus.with(mainActivity)
+                .observe(GetActivityEvent.class)
+                .bindLifecycle(mainActivity)
+                .doOnChange(event -> {
+                    if (event.callback != null) {
+                        event.callback.onCallback(mainActivity);
                     }
                 })
                 .subscribe();
     }
 
     public static void sendSkinChangeEvent() {
-        RxBus.post(KEY_SKIN_CHANGE_EVENT);
+        ZBus.post(KEY_SKIN_CHANGE_EVENT);
     }
 
     public static void onSkinChangeEvent(LifecycleOwner lifecycleOwner, Consumer<String> consumer) {
@@ -78,22 +75,22 @@ public class EventBus {
     }
 
     public static void onSkinChangeEvent(View view, Consumer<String> consumer) {
-        RxBus.observe(view, KEY_SKIN_CHANGE_EVENT)
-                .bindView(view)
-                .doOnNext(consumer)
+        ZBus.with(view)
+                .observe(KEY_SKIN_CHANGE_EVENT)
+                .doOnChange(consumer)
                 .subscribe();
     }
 
     public static void sendSearchEvent(String keyword) {
-        RxBus.post(KEY_SEARCH_EVENT, keyword);
+        ZBus.post(KEY_SEARCH_EVENT, keyword);
     }
 
-    public static void onSearchEvent(LifecycleOwner lifecycleOwner, RxBus.SingleConsumer<String> consumer) {
+    public static void onSearchEvent(LifecycleOwner lifecycleOwner, ZBus.SingleConsumer<String> consumer) {
         registerObserver(lifecycleOwner, KEY_SEARCH_EVENT, String.class, consumer);
     }
 
     public static void sendKeywordChangeEvent(String keyword) {
-        RxBus.post(KEY_KEYWORD_CHANGE_EVENT, keyword);
+        ZBus.post(KEY_KEYWORD_CHANGE_EVENT, keyword);
     }
 
     private static class NullableObject {
@@ -109,27 +106,27 @@ public class EventBus {
     }
 
     public static void hideLoading() {
-        RxBus.post(KEY_HIDE_LOADING_EVENT, new NullableObject(null));
+        ZBus.post(KEY_HIDE_LOADING_EVENT, new NullableObject(null));
     }
 
     public static void hideLoading(int delay) {
-        RxBus.postDelayed(KEY_HIDE_LOADING_EVENT, new NullableObject(null), delay);
+        ZBus.postDelayed(KEY_HIDE_LOADING_EVENT, new NullableObject(null), delay);
     }
 
     public static void hideLoading(IDialog.OnDismissListener listener) {
-        RxBus.post(KEY_HIDE_LOADING_EVENT, new NullableObject(listener));
+        ZBus.post(KEY_HIDE_LOADING_EVENT, new NullableObject(listener));
     }
 
     public static void hideLoading(long delay, IDialog.OnDismissListener listener) {
-        RxBus.postDelayed(KEY_HIDE_LOADING_EVENT, new NullableObject(listener), delay);
+        ZBus.postDelayed(KEY_HIDE_LOADING_EVENT, new NullableObject(listener), delay);
     }
 
     public static void onHideLoadingEvent(LifecycleOwner lifecycleOwner, Consumer<IDialog.OnDismissListener> consumer) {
-        RxBus.observe(lifecycleOwner, KEY_HIDE_LOADING_EVENT, NullableObject.class)
-                .bindToLife(lifecycleOwner)
-                .doOnNext(new RxBus.SingleConsumer<NullableObject>() {
+        ZBus.with(lifecycleOwner)
+                .observe(KEY_HIDE_LOADING_EVENT, NullableObject.class)
+                .doOnChange(new ZBus.SingleConsumer<NullableObject>() {
                     @Override
-                    public void onAccept(NullableObject nullableObject) throws Exception {
+                    public void onAccept(NullableObject nullableObject) {
                         if (consumer != null) {
                             if (nullableObject.getObject() instanceof IDialog.OnDismissListener) {
                                 consumer.accept((IDialog.OnDismissListener) nullableObject.getObject());
@@ -143,57 +140,54 @@ public class EventBus {
     }
 
     public static void showLoading(String text) {
-        RxBus.post(KEY_SHOW_LOADING_EVENT, text, false);
+        ZBus.post(KEY_SHOW_LOADING_EVENT, text, false);
     }
 
     public static void showLoading(String text, boolean isUpdate) {
-        RxBus.post(KEY_SHOW_LOADING_EVENT, text, isUpdate);
+        ZBus.post(KEY_SHOW_LOADING_EVENT, text, isUpdate);
     }
 
-    public static void onShowLoadingEvent(LifecycleOwner lifecycleOwner, RxBus.PairConsumer<String, Boolean> next) {
-        RxBus.observe(lifecycleOwner, KEY_SHOW_LOADING_EVENT, String.class, Boolean.class)
-                .bindToLife(lifecycleOwner)
-                .doOnNext(next)
+    public static void onShowLoadingEvent(LifecycleOwner lifecycleOwner, ZBus.PairConsumer<String, Boolean> next) {
+        ZBus.with(lifecycleOwner)
+                .observe(KEY_SHOW_LOADING_EVENT, String.class, Boolean.class)
+                .doOnChange(next)
                 .subscribe();
     }
 
 
     public static <T> void registerObserver(View view, Class<T> type, Consumer<T> next) {
-        RxBus.observe(view, type)
-                .doOnNext(next)
+        ZBus.with(view)
+                .observe(type)
+                .doOnChange(next)
                 .subscribe();
     }
 
     public static <T> void registerObserver(LifecycleOwner lifecycleOwner, Class<T> type, Consumer<T> next) {
-        RxBus.observe(lifecycleOwner, type)
-                .bindToLife(lifecycleOwner)
-                .doOnNext(next)
+        ZBus.with(lifecycleOwner)
+                .observe(type)
+                .doOnChange(next)
                 .subscribe();
     }
 
     public static void registerObserver(LifecycleOwner lifecycleOwner, String key, Consumer<String> next) {
-        RxBus.observe(lifecycleOwner, key)
-                .bindToLife(lifecycleOwner)
-                .doOnNext(next)
+        ZBus.with(lifecycleOwner)
+                .observe(key)
+                .doOnChange(next)
                 .subscribe();
     }
 
-    public static <T> void registerObserver(LifecycleOwner lifecycleOwner, String key, Class<T> type, RxBus.SingleConsumer<T> next) {
-        RxBus.observe(lifecycleOwner, key, type)
-                .bindToLife(lifecycleOwner)
-                .doOnNext(next)
+    public static <T> void registerObserver(LifecycleOwner lifecycleOwner, String key, Class<T> type, ZBus.SingleConsumer<T> next) {
+        ZBus.with(lifecycleOwner)
+                .observe(key, type)
+                .doOnChange(next)
                 .subscribe();
     }
 
-    public static <T> void registerObserver(Object o, String key, Class<T> type, RxBus.SingleConsumer<T> next) {
-        RxBus.observe(o, key, type)
-                .doOnNext(next)
+    public static <T> void registerObserver(Object o, String key, Class<T> type, ZBus.SingleConsumer<T> next) {
+        ZBus.with(o)
+                .observe(key, type)
+                .doOnChange(next)
                 .subscribe();
     }
-
-//    public static void unSubscribe(Object o) {
-//        RxBus.removeObservers(o);
-//    }
-
 
 }

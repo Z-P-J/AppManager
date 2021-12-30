@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.util.Log;
 
-import com.zpj.rxbus.RxBus;
+import com.zpj.bus.ZBus;
 
 public class AppReceiver extends BroadcastReceiver {
 
@@ -78,7 +78,7 @@ public class AppReceiver extends BroadcastReceiver {
             if (Intent.ACTION_PACKAGE_ADDED.equals(intent.getAction())
                     || Intent.ACTION_PACKAGE_REPLACED.equals(intent.getAction())
                     || Intent.ACTION_PACKAGE_REMOVED.equals(intent.getAction())) {
-                RxBus.post(intent.getData().getSchemeSpecificPart(), intent.getAction());
+                ZBus.post(intent.getData().getSchemeSpecificPart(), intent.getAction());
                 Log.d("AppReceiver", "安装的app的包名是-------->" + intent.getDataString() + " intent.getData().getSchemeSpecificPart()=" + intent.getData().getSchemeSpecificPart());
 //                if (TextUtils.equals(packageName, intent.getData().getSchemeSpecificPart())) {
 //
