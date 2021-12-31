@@ -12,6 +12,7 @@ import android.support.v4.content.FileProvider;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.zpj.appmanager.utils.ThreadPoolUtils;
 import com.zpj.notification.ZNotify;
 import com.zpj.utils.FileUtils;
 
@@ -20,12 +21,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-
-import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * @author Z-P-J
@@ -88,114 +83,96 @@ public class ApkInstaller {
             return;
         }
 
-        Observable.create(
-                (ObservableOnSubscribe<Integer>) emitter -> {
-                    switch (mInstallMode) {
-                        case AUTO:
-//                            Log.d(TAG, "checkRooted=" + Utils.checkRooted());
-//                            if (!installRoot(file)) { // !Utils.checkRooted() ||
-//                                installAS(file, emitter);
-//                            }
-
-                            try {
-                                installRoot(file);
-                            } catch (Throwable e) {
-                                e.printStackTrace();
-                                ZNotify.cancel(packageName.hashCode());
-                                installAS(file, emitter);
-                            }
-                            break;
-                        case ROOT:
-                            try {
-                                installRoot(file);
-                                emitter.onNext(0);
-                            } catch (Throwable e) {
-                                e.printStackTrace();
-                                ZNotify.with(mContext)
-                                        .buildNotify()
-                                        .setContentTitle("安装失败")
-                                        .setContentText(appName + "静默安装失败！" + e.getMessage())
-                                        .setId(packageName.hashCode())
-                                        .show();
-                                emitter.onError(e);
-                                emitter.onComplete();
-                                return;
-                            }
-//                            if (!installRoot(file)) {
-//                                emitter.onNext(0);
-//                            }
-                            break;
-                        case ACCESSIBILITY:
-                            installAS(file, emitter);
-                            break;
-                        case NORMAL:
-                            installNormally(file);
-                            break;
-                    }
-//                    emitter.onNext(0);
-                    emitter.onComplete();
-                })
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .doOnNext(integer -> {
-                    switch (integer) {
-                        case 0:
+        ThreadPoolUtils.execute(new Runnable() {
+            @Override
+            public void run() {
+                switch (mInstallMode) {
+                    case AUTO:
+                        try {
+                            installRoot(file);
+                        } catch (Throwable e) {
+                            e.printStackTrace();
+                            ZNotify.cancel(packageName.hashCode());
+                            installAS(file);
+                        }
+                        break;
+                    case ROOT:
+                        try {
+                            installRoot(file);
                             onComplete();
-                            break;
-                        case 3:
-                            onNeed2OpenService();
-                            break;
-                        case 4:
-                            onNeedInstallPermission();
-                            break;
-                    }
-
-                })
-                .doOnError(this::onError)
-                .subscribe();
+                        } catch (Throwable e) {
+                            e.printStackTrace();
+                            ZNotify.with(mContext)
+                                    .buildNotify()
+                                    .setContentTitle("安装失败")
+                                    .setContentText(appName + "静默安装失败！" + e.getMessage())
+                                    .setId(packageName.hashCode())
+                                    .show();
+                            onError(e);
+                            return;
+                        }
+                        break;
+                    case ACCESSIBILITY:
+                        installAS(file);
+                        break;
+                    case NORMAL:
+                        installNormally(file);
+                        break;
+                }
+            }
+        });
     }
 
     private void onComplete() {
-        Intent intent = mContext.getPackageManager().getLaunchIntentForPackage(packageName);
-        PendingIntent pendingIntent = PendingIntent.getActivity(mContext, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        ZNotify.with(mContext)
-                .buildNotify()
-                .setContentTitle(appName + "安装成功")
-                .setContentText("点击打开" + appName + "应用")
-                .setId(packageName.hashCode())
-                .setContentIntent(pendingIntent)
-                .show();
-        if (mInstallerListener != null) {
-            mInstallerListener.onComplete();
-        }
+        ThreadPoolUtils.post(() -> {
+            Intent intent = mContext.getPackageManager().getLaunchIntentForPackage(packageName);
+            PendingIntent pendingIntent = PendingIntent.getActivity(mContext, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            ZNotify.with(mContext)
+                    .buildNotify()
+                    .setContentTitle(appName + "安装成功")
+                    .setContentText("点击打开" + appName + "应用")
+                    .setId(packageName.hashCode())
+                    .setContentIntent(pendingIntent)
+                    .show();
+            if (mInstallerListener != null) {
+                mInstallerListener.onComplete();
+            }
+        });
+
     }
 
     private void onError(Throwable throwable) {
-        if (mInstallerListener != null) {
-            mInstallerListener.onError(throwable);
-        }
+        ThreadPoolUtils.post(() -> {
+            if (mInstallerListener != null) {
+                mInstallerListener.onError(throwable);
+            }
+        });
     }
 
     private void onNeed2OpenService() {
-        if (mInstallerListener != null) {
-            mInstallerListener.onNeed2OpenService();
-        }
+        ThreadPoolUtils.post(() -> {
+            if (mInstallerListener != null) {
+                mInstallerListener.onNeed2OpenService();
+            }
+        });
     }
 
     private void onNeedInstallPermission() {
-        if (mInstallerListener != null) {
-            mInstallerListener.onNeedInstallPermission();
-        }
+        ThreadPoolUtils.post(() -> {
+            if (mInstallerListener != null) {
+                mInstallerListener.onNeedInstallPermission();
+            }
+        });
     }
 
-    private void installAS(File file, ObservableEmitter<Integer> emitter) {
+    private void installAS(File file) {
         Log.d(TAG, "installUseAS");
 
         // 允许安装应用
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             boolean b = mContext.getPackageManager().canRequestPackageInstalls();
             if (!b) {
-                emitter.onNext(4);
+                onNeedInstallPermission();
                 Uri packageURI = Uri.parse("package:" + mContext.getPackageName());
                 Intent intent = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, packageURI);
                 mContext.startActivity(intent);
@@ -207,7 +184,7 @@ public class ApkInstaller {
 
         if (!isAccessibilitySettingsOn(mContext)) {
             toAccessibilityService();
-            emitter.onNext(3);
+            onNeed2OpenService();
         }
     }
 

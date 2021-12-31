@@ -8,18 +8,11 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 
+import com.zpj.appmanager.utils.ThreadPoolUtils;
 import com.zpj.utils.ContextUtils;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * 参考https://github.com/goweii/Blurred
@@ -49,6 +42,7 @@ public final class ZBlurry {
     private int mForegroundColor = Color.TRANSPARENT;
     private Bitmap mOriginalBitmap = null;
     private View mViewFrom = null;
+    private View mViewObserve = null;
     private View mViewInto = null;
 
     private BitmapProcessor mProcessor;
@@ -146,6 +140,11 @@ public final class ZBlurry {
     public ZBlurry view(View view) {
         reset();
         mViewFrom = view;
+        return this;
+    }
+
+    public ZBlurry setObserveView(View mViewObserve) {
+        this.mViewObserve = mViewObserve;
         return this;
     }
 
@@ -307,37 +306,10 @@ public final class ZBlurry {
         final float finalRadius = radius;
         final float finalScale = scale;
 
-        Observable.create(
-                new ObservableOnSubscribe<Bitmap>() {
-                    @Override
-                    public void subscribe(ObservableEmitter<Bitmap> emitter) throws Exception {
-                        Bitmap blur = requireBlur().process(getProcessor(), blurredBitmap, finalRadius, finalScale, mKeepSize, mRecycleOriginal);
-                        emitter.onNext(blur);
-                        emitter.onComplete();
-                    }
-                })
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<Bitmap>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(Bitmap bitmap) {
-                        callback.down(bitmap);
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        e.printStackTrace();
-                    }
-
-                    @Override
-                    public void onComplete() {
-                    }
-                });
+        ThreadPoolUtils.execute(() -> {
+            Bitmap blur = requireBlur().process(getProcessor(), blurredBitmap, finalRadius, finalScale, mKeepSize, mRecycleOriginal);
+            ThreadPoolUtils.post(() -> callback.down(blur));
+        });
 
     }
 
@@ -431,50 +403,20 @@ public final class ZBlurry {
                     final float finalRadius = radius;
 
 //                    Log.d("OnPreDrawListener", "onPreDraw--Observable.create");
-                    Observable.create(
-                            new ObservableOnSubscribe<Bitmap>() {
-                                @Override
-                                public void subscribe(ObservableEmitter<Bitmap> emitter) throws Exception {
-//                                    Log.d("OnPreDrawListener", "onPreDraw--subscribe");
-                                    Bitmap blur = requireBlur().process(getProcessor(), blurredBitmap, finalRadius, 1, mKeepSize, mRecycleOriginal);
-                                    Bitmap clip = getProcessor().clip(blur, mViewFrom, mViewInto, mFitIntoViewXY, mAntiAlias);
-                                    blur.recycle();
-                                    emitter.onNext(clip);
-                                    emitter.onComplete();
-                                }
-                            })
-                            .subscribeOn(Schedulers.newThread())
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .subscribe(new Observer<Bitmap>() {
-                                @Override
-                                public void onSubscribe(Disposable d) {
-//                                    Log.d("OnPreDrawListener", "onPreDraw--doOnSubscribe");
-                                }
 
-                                @Override
-                                public void onNext(Bitmap bitmap) {
-//                                    Log.d("OnPreDrawListener", "onPreDraw--doOnNext bitmap=" + bitmap);
 
-                                    callback.down(bitmap);
-                                }
-
-                                @Override
-                                public void onError(Throwable e) {
-                                    e.printStackTrace();
-                                    mLastFrameTime = System.currentTimeMillis();
-//                                    mViewFrom.getViewTreeObserver().addOnPreDrawListener(mOnPreDrawListener);
-                                    startBlur();
-//                                    Log.d("OnPreDrawListener", "onPreDraw--doOnError");
-                                }
-
-                                @Override
-                                public void onComplete() {
-                                    mLastFrameTime = System.currentTimeMillis();
-//                                    Log.d("OnPreDrawListener", "onPreDraw--doOnComplete");
-//                                    mViewFrom.getViewTreeObserver().addOnPreDrawListener(mOnPreDrawListener);
-                                    startBlur();
-                                }
-                            });
+                    ThreadPoolUtils.execute(() -> {
+                        try {
+                            Bitmap blur = requireBlur().process(getProcessor(), blurredBitmap, finalRadius, 1, mKeepSize, mRecycleOriginal);
+                            Bitmap clip = getProcessor().clip(blur, mViewFrom, mViewInto, mFitIntoViewXY, mAntiAlias);
+                            blur.recycle();
+                            ThreadPoolUtils.execute(() -> callback.down(clip));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        mLastFrameTime = System.currentTimeMillis();
+                        startBlur();
+                    });
 
 //                    blur(new Callback() {
 //                        @Override
@@ -498,7 +440,11 @@ public final class ZBlurry {
                     return true;
                 }
             };
-            mViewFrom.getViewTreeObserver().addOnPreDrawListener(mOnPreDrawListener);
+            if (mViewObserve != null) {
+                mViewObserve.getViewTreeObserver().addOnPreDrawListener(mOnPreDrawListener);
+            } else {
+                mViewFrom.getViewTreeObserver().addOnPreDrawListener(mOnPreDrawListener);
+            }
         }
         return this;
     }

@@ -17,10 +17,7 @@ import android.util.Log;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
-import com.zpj.http.core.HttpObserver;
 import com.zpj.toast.ZToast;
-import com.zpj.utils.FileUtils;
-import com.zpj.utils.ScreenUtils;
 
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
@@ -30,10 +27,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.concurrent.TimeUnit;
-
-import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 
 public class PictureUtil {
 
@@ -256,78 +249,70 @@ public class PictureUtil {
                     public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
 //                        HideLoadingEvent.post();
                         EventBus.hideLoading();
-                        Observable.timer(250 , TimeUnit.MILLISECONDS)
-                                .observeOn(AndroidSchedulers.mainThread())
-                                .doOnComplete(() -> {
-                                    try {
-                                        WallpaperManager wpm = (WallpaperManager) context.getSystemService(
-                                                Context.WALLPAPER_SERVICE);
-                                        wpm.setBitmap(resource);
-                                        ZToast.success("设置壁纸成功！");
-                                    } catch (IOException e) {
-                                        e.printStackTrace();
-                                        ZToast.error("设置壁纸失败！" + e.getMessage());
-                                    }
-                                })
-                                .subscribe();
+                        ThreadPoolUtils.postDelayed(() -> {
+                            try {
+                                WallpaperManager wpm = (WallpaperManager) context.getSystemService(
+                                        Context.WALLPAPER_SERVICE);
+                                wpm.setBitmap(resource);
+                                ZToast.success("设置壁纸成功！");
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                                ZToast.error("设置壁纸失败！" + e.getMessage());
+                            }
+                        }, 250);
                     }
                 });
     }
 
     public static void saveResource(Context context, int res, String fileName) {
-        new HttpObserver<>(
-                emitter -> {
-                    InputStream inputStream = context.getResources().openRawResource(res);
+        ThreadPoolUtils.execute(() -> {
+            try {
+                InputStream inputStream = context.getResources().openRawResource(res);
 
-                    Bitmap bmp = BitmapFactory.decodeResource(context.getResources(), res);
+                Bitmap bmp = BitmapFactory.decodeResource(context.getResources(), res);
 
-                    //1. create path
-                    String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + Environment.DIRECTORY_PICTURES;
-                    File dirFile = new File(dirPath);
-                    if (!dirFile.exists()) {
-                        dirFile.mkdirs();
-                    }
+                //1. create path
+                String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + Environment.DIRECTORY_PICTURES;
+                File dirFile = new File(dirPath);
+                if (!dirFile.exists()) {
+                    dirFile.mkdirs();
+                }
 
-                    String ext = ImageHeaderParser.getImageExtension(inputStream);
-                    String name = fileName + "." + ext;
-                    final File target = new File(dirPath, name);
-                    if (target.exists()) target.delete();
-                    target.createNewFile();
+                String ext = ImageHeaderParser.getImageExtension(inputStream);
+                String name = fileName + "." + ext;
+                final File target = new File(dirPath, name);
+                if (target.exists()) target.delete();
+                target.createNewFile();
 
 
-                    FileOutputStream fos = new FileOutputStream(target);
-                    bmp.compress(Bitmap.CompressFormat.JPEG, 100, fos);
-                    fos.flush();
-                    fos.close();
+                FileOutputStream fos = new FileOutputStream(target);
+                bmp.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+
+                fos.flush();
+                fos.close();
 
 //                    MediaStore.Images.Media.insertImage(context.getContentResolver(),  target.getAbsolutePath(), name, null);
 
-                    //2. save
+                //2. save
 //                    writeFileFromIS(target, inputStream);
-                    //3. notify
-                    MediaScannerConnection.scanFile(
-                            context,
-                            new String[]{target.getAbsolutePath()},
-                            new String[]{"image/" + ext},
-                            new MediaScannerConnection.OnScanCompletedListener() {
-                                @Override
-                                public void onScanCompleted(final String path, Uri uri) {
-                                    Observable.empty()
-                                            .observeOn(AndroidSchedulers.mainThread())
-                                            .doOnComplete(() -> ZToast.success("已保存到相册！"))
-                                            .subscribe();
-                                }
+                //3. notify
+                MediaScannerConnection.scanFile(
+                        context,
+                        new String[]{target.getAbsolutePath()},
+                        new String[]{"image/" + ext},
+                        new MediaScannerConnection.OnScanCompletedListener() {
+                            @Override
+                            public void onScanCompleted(final String path, Uri uri) {
+                                ThreadPoolUtils.post(() -> ZToast.success("已保存到相册！"));
                             }
-                    );
+                        }
+                );
+            } catch (IOException e) {
+                e.printStackTrace();
+                ZToast.error("保存失败！" + e.getMessage());
+            }
 
-
-                    emitter.onComplete();
-                })
-                .onError(throwable -> {
-                    throwable.printStackTrace();
-                    ZToast.error("保存失败！" + throwable.getMessage());
-                })
-                .subscribe();
+        });
     }
 
 }

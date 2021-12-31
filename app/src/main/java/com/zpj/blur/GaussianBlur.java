@@ -132,9 +132,6 @@ public final class GaussianBlur implements IBlur {
      */
     private Bitmap blurIn25(final Bitmap input, final float radius) {
         Utils.requireNonNull(input, "待模糊Bitmap不能为空");
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            throw new RuntimeException("Call requires API level " + Build.VERSION_CODES.JELLY_BEAN_MR1 + " (current min is " + Build.VERSION.SDK_INT + ")");
-        }
         final float newRadius;
         if (radius < 0) {
             newRadius = 0;

@@ -3,19 +3,14 @@ package com.zpj.appmanager.manager;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
-import com.zpj.rxlife.RxLife;
 import com.zpj.appmanager.model.InstalledAppInfo;
+import com.zpj.appmanager.utils.ThreadPoolUtils;
 import com.zpj.utils.ContextUtils;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
-
-import io.reactivex.Observable;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 
 public class AppInstalledManager { //  extends BroadcastReceiver
 
@@ -94,7 +89,6 @@ public class AppInstalledManager { //  extends BroadcastReceiver
     }
 
     public void onDestroy() {
-        RxLife.removeByTag(TAG);
         manager = null;
         installedAppInfoList.clear();
         callbacks.clear();
@@ -175,33 +169,30 @@ public class AppInstalledManager { //  extends BroadcastReceiver
         }
         isLoaded.set(false);
         isLoading.set(true);
-        RxLife.removeByTag(TAG);
         installedAppInfoList.clear();
-        Observable.create(
-                (ObservableOnSubscribe<List<InstalledAppInfo>>) emitter -> {
-                    PackageManager manager = ContextUtils.getApplicationContext().getPackageManager();
-                    List<PackageInfo> packageInfoList = manager.getInstalledPackages(0);
-                    List<InstalledAppInfo> installedAppInfos = new ArrayList<>();
-                    for (PackageInfo packageInfo : packageInfoList) {
-                        installedAppInfos.add(InstalledAppInfo.parseFromPackageInfo(manager, packageInfo));
-                    }
-                    emitter.onNext(installedAppInfos);
-                    emitter.onComplete();
-                })
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .compose(RxLife.bindTag(TAG))
-                .doOnNext(installedAppInfos -> {
-                    installedAppInfoList.addAll(installedAppInfos);
-                    isLoaded.set(true);
-                    isLoading.set(false);
-                    for (InstalledAppInfo info : installedAppInfos) {
-                        onNext(info);
-                    }
-                    onFinished();
-                })
-                .doOnError(Throwable::printStackTrace)
-                .subscribe();
+
+        ThreadPoolUtils.execute(() -> {
+            PackageManager manager = ContextUtils.getApplicationContext().getPackageManager();
+            List<PackageInfo> packageInfoList = manager.getInstalledPackages(0);
+            List<InstalledAppInfo> installedAppInfos = new ArrayList<>();
+            for (PackageInfo packageInfo : packageInfoList) {
+                installedAppInfos.add(InstalledAppInfo.parseFromPackageInfo(manager, packageInfo));
+            }
+
+            ThreadPoolUtils.post(() -> {
+                if (manager == null) {
+                    return;
+                }
+                installedAppInfoList.addAll(installedAppInfos);
+                isLoaded.set(true);
+                isLoading.set(false);
+                for (InstalledAppInfo info : installedAppInfos) {
+                    onNext(info);
+                }
+                onFinished();
+            });
+
+        });
     }
 
     public interface CallBack {

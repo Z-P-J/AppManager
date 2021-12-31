@@ -321,7 +321,7 @@ public class PackageManagerFragment extends RecyclerLayoutFragment<InstalledAppI
                         if (item != null) {
                             synchronized (data) {
                                 data.add(item);
-                                if (data.size() < 15) {
+                                if (data.size() < 20) {
                                     recyclerLayout.notifyDataSetChanged();
                                 } else {
                                     recyclerLayout.notifyItemInserted(data.size() - 1);

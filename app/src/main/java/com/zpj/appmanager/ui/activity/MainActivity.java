@@ -120,29 +120,6 @@ public class MainActivity extends BaseActivity {
                         flContainer.setOnTouchListener(null);
 
                         postDelayed(() -> handleIntent(getIntent()), 250);
-
-
-
-//                        if (AppConfig.isShowSplash()) {
-//                            Observable.timer(1500, TimeUnit.MILLISECONDS)
-//                                    .subscribeOn(Schedulers.io())
-//                                    .observeOn(AndroidSchedulers.mainThread())
-//                                    .doOnComplete(() -> {
-////                                        rlSplash.setVisibility(View.GONE);
-//                                        flContainer.animate()
-//                                                .setDuration(500)
-//                                                .alpha(1)
-//                                                .start();
-//                                        flContainer.setOnTouchListener(null);
-//                                    })
-//                                    .subscribe();
-//                        } else {
-//                            flContainer.setOnTouchListener(null);
-//                            flContainer.animate()
-//                                    .setDuration(1000)
-//                                    .alpha(1)
-//                                    .start();
-//                        }
                     }
 
                     @Override

@@ -33,9 +33,6 @@ import com.zpj.widget.setting.SwitchSettingItem;
 
 import java.lang.ref.WeakReference;
 
-import io.reactivex.functions.Consumer;
-import io.reactivex.plugins.RxJavaPlugins;
-
 public class BaseApplication extends MultiDexApplication {
 
 //    private BaseApplication application;
@@ -104,13 +101,6 @@ public class BaseApplication extends MultiDexApplication {
         ViewTarget.setTagId(R.id.glide_tag_id);
 //        Glide.with(getApplicationContext())
 //                .setDefaultRequestOptions(GlideUtils.REQUEST_OPTIONS).applyDefaultRequestOptions()
-
-        RxJavaPlugins.setErrorHandler(new Consumer<Throwable>() {
-            @Override
-            public void accept(Throwable throwable) throws Exception {
-                throwable.printStackTrace();
-            }
-        });
 
         Log.d("AppAppApp", "signature=" + AppUtils.getAppSignatureMD5(this, getPackageName()));
         Log.d("AppAppApp", "duration=" + (System.currentTimeMillis() - start));
