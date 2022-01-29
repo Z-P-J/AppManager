@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AppManager.iml" filepath="$PROJECT_DIR$/.idea/modules/AppManager.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AppManager.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AppManager.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bus/AppManager.bus.iml" filepath="$PROJECT_DIR$/.idea/modules/bus/AppManager.bus.iml" />
     </modules>
   </component>
 </project>

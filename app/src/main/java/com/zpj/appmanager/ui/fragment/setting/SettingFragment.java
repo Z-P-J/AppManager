@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import com.zpj.appmanager.R;
 import com.zpj.appmanager.ui.fragment.dialog.BrightnessDialogFragment;
 import com.zpj.appmanager.ui.fragment.dialog.SeekBarDialogFragment;
+import com.zpj.appmanager.utils.ThreadPoolUtils;
 import com.zpj.fragmentation.dialog.ZDialog;
 import com.zpj.http.core.HttpObserver;
 import com.zpj.http.core.IHttp;
@@ -66,13 +67,10 @@ public class SettingFragment extends BaseSettingFragment {
 
         CommonSettingItem itemClearCache = view.findViewById(R.id.item_clear_cache);
         itemClearCache.setOnItemClickListener(this);
-        new HttpObserver<String>(
-                emitter -> {
-                    emitter.onNext(CacheUtils.getTotalCacheSizeStr(context));
-                    emitter.onComplete();
-                })
-                .onSuccess(itemClearCache::setRightText)
-                .subscribe();
+        ThreadPoolUtils.execute(() -> {
+            String cacheSize = CacheUtils.getTotalCacheSizeStr(context);
+            ThreadPoolUtils.post(() -> itemClearCache.setRightText(cacheSize));
+        });
 
 
         CommonSettingItem itemDownloadFolder = view.findViewById(R.id.item_download_folder);
@@ -175,22 +173,16 @@ public class SettingFragment extends BaseSettingFragment {
 //                            .setAutoDismiss(false)
                             .setPositiveButton((fragment, which) -> {
                                 EventBus.showLoading("清除中...");
-                                new HttpObserver<String>(
-                                        emitter -> {
-                                            CacheUtils.clearAllCache(context);
-                                            emitter.onNext(CacheUtils.getTotalCacheSizeStr(context));
-                                            emitter.onComplete();
-                                        })
-                                        .onSuccess(new IHttp.OnSuccessListener<String>() {
-                                            @Override
-                                            public void onSuccess(String data) throws Exception {
-                                                EventBus.hideLoading(1000, () -> {
-                                                    ZToast.success("清理成功");
-                                                    item.setRightText(data);
-                                                });
-                                            }
-                                        })
-                                        .subscribe();
+                                ThreadPoolUtils.execute(() -> {
+                                    CacheUtils.clearAllCache(context);
+                                    String cacheSize = CacheUtils.getTotalCacheSizeStr(context);
+
+                                    EventBus.hideLoading(1000, () -> {
+                                        ZToast.success("清理成功!");
+                                        item.setRightText(cacheSize);
+                                    });
+
+                                });
                             })
                             .show(context);
                 } else {
@@ -206,12 +198,9 @@ public class SettingFragment extends BaseSettingFragment {
                         .setMax(5)
                         .setMin(1)
                         .setProgress(AppConfig.getMaxDownloadConcurrentCount())
-                        .setOnSeekProgressChangeListener(new SeekBarDialogFragment.OnSeekProgressChangeListener() {
-                            @Override
-                            public void onSeek(int progress) {
-                                AppConfig.setMaxDownloadConcurrentCount(progress);
-                                item.setInfoText(String.valueOf(progress));
-                            }
+                        .setOnSeekProgressChangeListener(progress -> {
+                            AppConfig.setMaxDownloadConcurrentCount(progress);
+                            item.setInfoText(String.valueOf(progress));
                         })
                         .show(context);
                 break;
@@ -221,12 +210,9 @@ public class SettingFragment extends BaseSettingFragment {
                         .setMax(9)
                         .setMin(1)
                         .setProgress(AppConfig.getMaxDownloadThreadCount())
-                        .setOnSeekProgressChangeListener(new SeekBarDialogFragment.OnSeekProgressChangeListener() {
-                            @Override
-                            public void onSeek(int progress) {
-                                AppConfig.setMaxDownloadThreadCount(progress);
-                                item.setInfoText(String.valueOf(progress));
-                            }
+                        .setOnSeekProgressChangeListener(progress -> {
+                            AppConfig.setMaxDownloadThreadCount(progress);
+                            item.setInfoText(String.valueOf(progress));
                         })
                         .show(context);
                 break;

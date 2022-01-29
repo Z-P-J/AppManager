@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 1.5.69
 # min_api: 19
-# pg_map_id: e25f6e4
+# pg_map_id: fb07d2e
 android.arch.core.executor.ArchTaskExecutor -> a.a.a.a.a:
     android.arch.core.executor.ArchTaskExecutor sInstance -> c
     android.arch.core.executor.TaskExecutor mDelegate -> a
@@ -26606,36 +26606,34 @@ com.zpj.appmanager.-$$Lambda$BaseApplication$kBpfxICeTLN1sA7Q2a-L4Z3tAis -> com.
     com.zpj.appmanager.-$$Lambda$BaseApplication$kBpfxICeTLN1sA7Q2a-L4Z3tAis INSTANCE -> a
     void onCrash(java.io.File) -> a
 com.zpj.appmanager.BaseApplication -> com.zpj.appmanager.BaseApplication:
-    39:39:void <init>() -> <init>
-    39:39:java.lang.ref.WeakReference access$002(java.lang.ref.WeakReference) -> a
-    68:68:void lambda$onCreate$0(java.io.File) -> a
-    47:157:void onCreate() -> onCreate
+    36:36:void <init>() -> <init>
+    36:36:java.lang.ref.WeakReference access$002(java.lang.ref.WeakReference) -> a
+    65:65:void lambda$onCreate$0(java.io.File) -> a
+    44:147:void onCreate() -> onCreate
 com.zpj.appmanager.BaseApplication$1 -> com.zpj.appmanager.BaseApplication$a:
-    84:84:void <init>(com.zpj.appmanager.BaseApplication) -> <init>
-    87:99:void onViewCreated(android.view.View) -> a
+    81:81:void <init>(com.zpj.appmanager.BaseApplication) -> <init>
+    84:96:void onViewCreated(android.view.View) -> a
 com.zpj.appmanager.BaseApplication$2 -> com.zpj.appmanager.BaseApplication$b:
     108:108:void <init>(com.zpj.appmanager.BaseApplication) -> <init>
-com.zpj.appmanager.BaseApplication$3 -> com.zpj.appmanager.BaseApplication$c:
-    118:118:void <init>(com.zpj.appmanager.BaseApplication) -> <init>
-    121:124:void onActivityCreated(android.app.Activity,android.os.Bundle) -> onActivityCreated
-    154:154:void onActivityDestroyed(android.app.Activity) -> onActivityDestroyed
-    139:139:void onActivityPaused(android.app.Activity) -> onActivityPaused
-    134:134:void onActivityResumed(android.app.Activity) -> onActivityResumed
-    149:149:void onActivitySaveInstanceState(android.app.Activity,android.os.Bundle) -> onActivitySaveInstanceState
-    129:129:void onActivityStarted(android.app.Activity) -> onActivityStarted
-    144:144:void onActivityStopped(android.app.Activity) -> onActivityStopped
-com.zpj.appmanager.BaseApplication$SettingItemApplicator -> com.zpj.appmanager.BaseApplication$d:
-    169:176:void <init>() -> <init>
-com.zpj.appmanager.BaseApplication$SettingItemApplicator$1 -> com.zpj.appmanager.BaseApplication$d$a:
-    170:170:void <init>(com.zpj.appmanager.BaseApplication$SettingItemApplicator) -> <init>
-    170:170:void onApply(android.view.View,android.content.res.TypedArray,int) -> a
-    173:174:void onApply(com.zpj.widget.setting.SwitchSettingItem,android.content.res.TypedArray,int) -> a
-com.zpj.appmanager.BaseApplication$SimpleSettingItemApplicator -> com.zpj.appmanager.BaseApplication$e:
-    181:188:void <init>() -> <init>
-com.zpj.appmanager.BaseApplication$SimpleSettingItemApplicator$1 -> com.zpj.appmanager.BaseApplication$e$a:
-    182:182:void <init>(com.zpj.appmanager.BaseApplication$SimpleSettingItemApplicator) -> <init>
-    182:182:void onApply(android.view.View,android.content.res.TypedArray,int) -> a
-    185:186:void onApply(com.zpj.widget.setting.SimpleSettingItem,android.content.res.TypedArray,int) -> a
+    111:114:void onActivityCreated(android.app.Activity,android.os.Bundle) -> onActivityCreated
+    144:144:void onActivityDestroyed(android.app.Activity) -> onActivityDestroyed
+    129:129:void onActivityPaused(android.app.Activity) -> onActivityPaused
+    124:124:void onActivityResumed(android.app.Activity) -> onActivityResumed
+    139:139:void onActivitySaveInstanceState(android.app.Activity,android.os.Bundle) -> onActivitySaveInstanceState
+    119:119:void onActivityStarted(android.app.Activity) -> onActivityStarted
+    134:134:void onActivityStopped(android.app.Activity) -> onActivityStopped
+com.zpj.appmanager.BaseApplication$SettingItemApplicator -> com.zpj.appmanager.BaseApplication$c:
+    159:166:void <init>() -> <init>
+com.zpj.appmanager.BaseApplication$SettingItemApplicator$1 -> com.zpj.appmanager.BaseApplication$c$a:
+    160:160:void <init>(com.zpj.appmanager.BaseApplication$SettingItemApplicator) -> <init>
+    160:160:void onApply(android.view.View,android.content.res.TypedArray,int) -> a
+    163:164:void onApply(com.zpj.widget.setting.SwitchSettingItem,android.content.res.TypedArray,int) -> a
+com.zpj.appmanager.BaseApplication$SimpleSettingItemApplicator -> com.zpj.appmanager.BaseApplication$d:
+    171:178:void <init>() -> <init>
+com.zpj.appmanager.BaseApplication$SimpleSettingItemApplicator$1 -> com.zpj.appmanager.BaseApplication$d$a:
+    172:172:void <init>(com.zpj.appmanager.BaseApplication$SimpleSettingItemApplicator) -> <init>
+    172:172:void onApply(android.view.View,android.content.res.TypedArray,int) -> a
+    175:176:void onApply(com.zpj.widget.setting.SimpleSettingItem,android.content.res.TypedArray,int) -> a
 com.zpj.appmanager.R$anim -> com.zpj.appmanager.R$anim:
     11:11:void <init>() -> <init>
 com.zpj.appmanager.R$animator -> com.zpj.appmanager.R$animator:
@@ -28095,23 +28093,23 @@ com.zpj.appmanager.utils.AppUtil -> com.zpj.appmanager.utils.f:
     30:31:void backupApp(com.zpj.appmanager.model.InstalledAppInfo) -> a
     26:26:java.io.File getAppBackupFile(com.zpj.appmanager.model.InstalledAppInfo) -> b
 com.zpj.appmanager.utils.EventBus -> com.zpj.appmanager.utils.g:
-    58:67:void onGetActivityEvent(com.zpj.appmanager.ui.activity.MainActivity) -> a
-    62:65:void lambda$onGetActivityEvent$0(com.zpj.appmanager.ui.activity.MainActivity,com.zpj.appmanager.utils.EventBus$GetActivityEvent) -> a
-    70:71:void sendSkinChangeEvent() -> a
-    125:140:void onHideLoadingEvent(android.arch.lifecycle.LifecycleOwner,com.zpj.bus.Consumer) -> a
-    151:155:void onShowLoadingEvent(android.arch.lifecycle.LifecycleOwner,com.zpj.bus.ZBus$PairConsumer) -> a
-    166:170:void registerObserver(android.arch.lifecycle.LifecycleOwner,java.lang.Class,com.zpj.bus.Consumer) -> a
+    59:68:void onGetActivityEvent(com.zpj.appmanager.ui.activity.MainActivity) -> a
+    63:66:void lambda$onGetActivityEvent$0(com.zpj.appmanager.ui.activity.MainActivity,com.zpj.appmanager.utils.EventBus$GetActivityEvent) -> a
+    71:72:void sendSkinChangeEvent() -> a
+    126:142:void onHideLoadingEvent(android.arch.lifecycle.LifecycleOwner,com.zpj.bus.Consumer) -> a
+    153:157:void onShowLoadingEvent(android.arch.lifecycle.LifecycleOwner,com.zpj.bus.ZBus$PairConsumer) -> a
+    168:172:void registerObserver(android.arch.lifecycle.LifecycleOwner,java.lang.Class,com.zpj.bus.Consumer) -> a
 com.zpj.appmanager.utils.EventBus$1 -> com.zpj.appmanager.utils.g$a:
     com.zpj.bus.Consumer val$consumer -> a
-    127:127:void <init>(com.zpj.bus.Consumer) -> <init>
-    127:127:void onAccept(java.lang.Object) -> a
-    130:137:void onAccept(com.zpj.appmanager.utils.EventBus$NullableObject) -> a
+    129:129:void <init>(com.zpj.bus.Consumer) -> <init>
+    129:129:void onAccept(java.lang.Object) -> a
+    132:139:void onAccept(com.zpj.appmanager.utils.EventBus$NullableObject) -> a
 com.zpj.appmanager.utils.EventBus$GetActivityEvent -> com.zpj.appmanager.utils.g$b:
     com.zpj.utils.Callback callback -> a
-    43:43:com.zpj.utils.Callback access$200(com.zpj.appmanager.utils.EventBus$GetActivityEvent) -> a
+    44:44:com.zpj.utils.Callback access$200(com.zpj.appmanager.utils.EventBus$GetActivityEvent) -> a
 com.zpj.appmanager.utils.EventBus$NullableObject -> com.zpj.appmanager.utils.g$c:
     java.lang.Object o -> a
-    104:104:java.lang.Object getObject() -> a
+    105:105:java.lang.Object getObject() -> a
 com.zpj.appmanager.utils.FileScanner -> com.zpj.appmanager.utils.FileScanner:
     java.util.List taskList -> b
     java.util.concurrent.ConcurrentLinkedQueue folderList -> a
@@ -28347,6 +28345,7 @@ com.zpj.bus.EventObserver -> com.zpj.bus.c:
     com.zpj.bus.EventObserver bindLifecycle(android.arch.lifecycle.LifecycleOwner) -> a
     com.zpj.bus.EventObserver bindView(android.view.View) -> a
     com.zpj.bus.EventObserver doOnChange(java.lang.Object) -> a
+    com.zpj.bus.EventObserver observeOn(com.zpj.bus.Schedulers$Scheduler) -> a
     com.zpj.bus.EventObserver bindTag(java.lang.Object) -> b
     void subscribe() -> b
 com.zpj.bus.EventObserverImpl -> com.zpj.bus.EventObserverImpl:
@@ -28362,6 +28361,7 @@ com.zpj.bus.EventObserverImpl -> com.zpj.bus.EventObserverImpl:
     42:47:void <init>(com.zpj.bus.EventLiveData,java.lang.String) -> <init>
     23:23:com.zpj.bus.Consumer access$300(com.zpj.bus.EventObserverImpl) -> a
     23:23:com.zpj.bus.EventObserver doOnChange(java.lang.Object) -> a
+    51:52:com.zpj.bus.EventObserver observeOn(com.zpj.bus.Schedulers$Scheduler) -> a
     62:63:com.zpj.bus.EventObserver bindTag(java.lang.Object,boolean) -> a
     68:74:com.zpj.bus.EventObserver bindView(android.view.View) -> a
     79:79:com.zpj.bus.EventObserver bindLifecycle(android.arch.lifecycle.LifecycleOwner) -> a
@@ -31701,14 +31701,10 @@ com.zpj.widget.toolbar.ZToolBar -> com.zpj.widget.toolbar.ZToolBar:
 io.reactivex.Observable -> c.a.a:
 io.reactivex.ObservableSource -> c.a.b:
 io.reactivex.Observer -> c.a.c:
-io.reactivex.functions.Consumer -> c.a.d.a:
-io.reactivex.plugins.RxJavaPlugins -> c.a.e.a:
-    boolean lockdown -> a
-    549:550:void setErrorHandler(io.reactivex.functions.Consumer) -> a
-io.reactivex.subjects.BehaviorSubject -> c.a.f.a:
+io.reactivex.subjects.BehaviorSubject -> c.a.d.a:
     157:167:void <clinit>() -> <clinit>
     void onNext(java.lang.Object) -> a
-io.reactivex.subjects.Subject -> c.a.f.b:
+io.reactivex.subjects.Subject -> c.a.d.b:
 kotlin.jvm.internal.DefaultConstructorMarker -> d.a.a.a:
 kotlin.jvm.internal.Intrinsics -> d.a.a.b:
     17:18:void <init>() -> <init>

@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.zpj.appmanager.ui.activity.MainActivity;
 import com.zpj.bus.Consumer;
+import com.zpj.bus.Schedulers;
 import com.zpj.bus.ZBus;
 import com.zpj.fragmentation.dialog.IDialog;
 import com.zpj.utils.Callback;
@@ -124,6 +125,7 @@ public class EventBus {
     public static void onHideLoadingEvent(LifecycleOwner lifecycleOwner, Consumer<IDialog.OnDismissListener> consumer) {
         ZBus.with(lifecycleOwner)
                 .observe(KEY_HIDE_LOADING_EVENT, NullableObject.class)
+                .observeOn(Schedulers.main())
                 .doOnChange(new ZBus.SingleConsumer<NullableObject>() {
                     @Override
                     public void onAccept(NullableObject nullableObject) {
